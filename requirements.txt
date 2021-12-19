@@ -1,5 +1,5 @@
 # ESP related modules
-platformio==5.2.2
+platformio
 pyserial==3.5
 esptool==3.2
 PyYAML==6.0
@@ -11,4 +11,3 @@ ecdsa>=0.16.0
 boto3
 pandas
 matplotlib
-

@@ -19,6 +19,6 @@ if [[ ! -f "${HOME}/awscli2.zip" ]];then
         echo "DONE!"
         echo "REMOVING INSTALLATION FILES"
         sudo rm -rf "${HOME}/awscli2.zip"
-        sudo rm -rf "{HOME}/aws"
+        sudo rm -rf "${HOME}/aws"
     fi
 fi
