@@ -22,7 +22,7 @@ body:
   - type: input
     id: done-criteria
     attributes:
-      label: Done
+      label: Done Criteria
       description: Define detailed criteria when this requirement is fulfilled
       placeholder: Tested and refactored class xyz...
     validations:
