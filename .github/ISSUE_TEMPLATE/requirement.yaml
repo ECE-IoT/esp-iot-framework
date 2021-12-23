@@ -20,7 +20,7 @@ body:
         - label: MEDIUM
         - label: LOW
   - type: input
-    id: done criteria
+    id: done-criteria
     attributes:
       label: Done
       description: Define detailed criteria when this requirement is fulfilled
