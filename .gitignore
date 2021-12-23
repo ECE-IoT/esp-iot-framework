@@ -7,8 +7,18 @@ __pycache__/
 .LSOverride
 Icon
 
+# PIO related stuff
 .pioenvs
 .piolibdeps
 .pio
-.vscode/
-!.vscode/settings.json
+
+# VSCODE related stuff
+**/.vscode/c_cpp_properties.json
+**/.vscode/launch.json
+
+# Globally used folders which should not be synched to GIT
+**/secrets
+**/data
+
+# does not need to be synched, just for mkdocs locally
+site/

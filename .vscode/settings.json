@@ -1,0 +1,33 @@
+{
+  "platformio-ide.activateOnlyOnPlatformIOProject": true,
+  "platformio-ide.activateProjectOnTextEditorChange": false,
+  "platformio-ide.autoOpenPlatformIOIniFile": true,
+  "platformio-ide.autoCloseSerialMonitor": true,
+  "platformio-ide.autoRebuildAutocompleteIndex": true,
+  "platformio-ide.autoPreloadEnvTasks": false,
+  "platformio-ide.disableToolbar": false,
+  "platformio-ide.forceUploadAndMonitor": false,
+  "platformio-ide.reopenSerialMonitorDelay": 50,
+  "platformio-ide.useBuiltinPython": true,
+  "platformio-ide.useBuiltinPIOCore": true,
+  "platformio-ide.useDevelopmentPIOCore": false,
+  "platformio-ide.disablePIOHomeStartup": true,
+  "platformio-ide.pioHomeServerHttpPort": 8008,
+  "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Microsoft,  ColumnLimit: 120, PointerAlignment: Left, IndentWidth: 2, AlignAfterOpenBracket: AlwaysBreak, AlignConsecutiveAssignments: AcrossEmptyLinesAndComments, AlignConsecutiveMacros: AcrossEmptyLinesAndComments, AllowShortBlocksOnASingleLine: Never, BreakBeforeTernaryOperators: true}",
+  "C_Cpp.autoAddFileAssociations": true,
+  "C_Cpp.autocompleteAddParentheses": true,
+  "C_Cpp.autocomplete": "Default",
+  "C_Cpp.default.intelliSenseMode": "gcc-x64",
+  "C_Cpp.enhancedColorization": "Enabled",
+  "C_Cpp.suggestSnippets": true,
+  "[c]": {
+    "editor.defaultFormatter": "ms-vscode.cpptools"
+  },
+  "[cpp]": {
+    "editor.defaultFormatter": "ms-vscode.cpptools"
+  },
+  "editor.tabSize": 2,
+  "files.associations": {
+    "*.impl": "cpp"
+  }
+}
