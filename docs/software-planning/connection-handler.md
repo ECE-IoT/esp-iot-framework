@@ -18,6 +18,6 @@ Basic UML in order to understand the structure of the class
       +MQTTClient *mqtt_client
       +enum states
       -ConnectionHandler(MQTTClient new_mqtt_client, EspConfig new_esp_config)
-      - state connectionStateMachine()
+      -state connectionStateMachine()
     }
 ```

@@ -1,4 +1,4 @@
-#include "esp_wifi.hpp"
+#include "wifi.h"
 
 EspWifi::EspWifi(char* wifi_ssid, char* wifi_pswd)
 {

@@ -1,4 +1,4 @@
-#include "esp_spiffs.hpp"
+#include "spiffs.h"
 
 void EspSpiffs::spiffsBeginn()
 {
@@ -14,10 +14,10 @@ char* EspSpiffs::readSpiffs(String path)
 
   if (!file)
   {
-    return (char *)"\0";
+    return (char*)"\0";
   }
-  size_t size = file.size();
-  char *file_content = (char *)malloc((size + 1) * sizeof(char));
+  size_t size        = file.size();
+  char* file_content = (char*)malloc((size + 1) * sizeof(char));
 
   file.readBytes(file_content, size);
   file_content[size] = '\0';
@@ -49,5 +49,4 @@ void EspSpiffs::createFile(String path)
   }
   file.print("");
   file.close();
-
 }

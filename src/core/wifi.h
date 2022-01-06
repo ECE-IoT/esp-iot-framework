@@ -1,16 +1,16 @@
-#ifndef VERT_PROT_WIFI
-#define VERT_PROT_WIFI
+#ifndef ESP_IOT_WIFI
+#define ESP_IOT_WIFI
 
 #include <Arduino.h>
 #include <WiFiClientSecure.h>
 
 class EspWifi
 {
-  private:
+private:
   char* ssid;
   char* pswd;
 
-  public:
+public:
   EspWifi(char* wifi_ssid, char* wifi_pswd);
   void beginWifi();
   void reconnectWifi();

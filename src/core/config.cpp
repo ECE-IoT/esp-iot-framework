@@ -1,4 +1,4 @@
-#include "esp_config.hpp"
+#include "config.h"
 
 EspConfig::EspConfig()
 {
@@ -7,11 +7,11 @@ EspConfig::EspConfig()
   DynamicJsonDocument doc(1024);
   deserializeJson(doc, json_file);
 
-  aws_url = strdup(doc["aws_url"]);
+  aws_url    = strdup(doc["aws_url"]);
   mqtt_topic = strdup(doc["mqtt_topic"]);
-  wifi_ssid = strdup(doc["ssid"]);
-  wifi_pswd = strdup(doc["password"]);
-  aws_port = doc["aws_port"];
+  wifi_ssid  = strdup(doc["ssid"]);
+  wifi_pswd  = strdup(doc["password"]);
+  aws_port   = doc["aws_port"];
 }
 
 char* EspConfig::getWifiSSID()

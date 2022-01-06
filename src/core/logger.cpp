@@ -1,4 +1,4 @@
-#include "esp_logger.hpp"
+#include "logger.h"
 
 void EspLogger::logBegin()
 {
@@ -9,13 +9,12 @@ void EspLogger::logBegin()
 
 void EspLogger::logError(String message)
 {
-  String error_message = "ERROR "+ message + "  timestamp: "+ millis();
+  String error_message = "ERROR " + message + "  timestamp: " + millis();
   spiffs.appendLog(error_message, LOG_FILE);
-
 }
 
 void EspLogger::logInfo(String message)
 {
-  String info_message = "INFO "+ message + "  timestamp: "+ millis();
+  String info_message = "INFO " + message + "  timestamp: " + millis();
   spiffs.appendLog(info_message, LOG_FILE);
 }
