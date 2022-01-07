@@ -4,12 +4,13 @@
 #include <Arduino.h>
 #include <functional>
 
-class Component
+template <class T> class EspComponent
 {
 public:
-  virtual void setup();
-  virtual void update();
-  virtual void setValue();
+  virtual void setup(){};
+  virtual void setup(T setup_config){};
+  virtual void update(){};
+  virtual void setValue(){};
 };
 
 #endif

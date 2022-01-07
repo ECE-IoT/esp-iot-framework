@@ -28,6 +28,7 @@
   },
   "editor.tabSize": 2,
   "files.associations": {
+    "*.py": "python",
     "*.impl": "cpp",
     "array": "cpp",
     "*.tcc": "cpp",
@@ -63,6 +64,7 @@
     "streambuf": "cpp",
     "cinttypes": "cpp",
     "utility": "cpp",
-    "typeinfo": "cpp"
+    "typeinfo": "cpp",
+    "string": "cpp"
   }
 }
