@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.2.3, mkdocs-material-8.1.4" name="generator"/>
-<title>Class - ConnectionHandler - ESP IoT Framework</title>
+<title>Sensors - ESP IoT Framework</title>
 <link href="../../assets/stylesheets/main.bb3983ee.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.e6a45f82.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -22,7 +22,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#class-connectionhandler">
+<a class="md-skip" href="#structure-for-implementing-sensor-modules">
           Skip to content
         </a>
 </div>
@@ -46,7 +46,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Class - ConnectionHandler
+              Sensors
             
           </span>
 </div>
@@ -114,7 +114,7 @@
     </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link md-tabs__link--active" href="./">
+<a class="md-tabs__link md-tabs__link--active" href="../connection-handler/">
         Software Planning
       </a>
 </li>
@@ -161,14 +161,19 @@
           Software Planning
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../connection-handler/">
+        Class - ConnectionHandler
+      </a>
+</li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
-          Class - ConnectionHandler
+          Sensors
           <span class="md-nav__icon md-icon"></span>
 </label>
 <a class="md-nav__link md-nav__link--active" href="./">
-        Class - ConnectionHandler
+        Sensors
       </a>
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
 <label class="md-nav__title" for="__toc">
@@ -177,17 +182,12 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#features">
-    Features
+<a class="md-nav__link" href="#structure">
+    Structure
   </a>
 </li>
 </ul>
 </nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../sensors/">
-        Sensors
-      </a>
 </li>
 </ul>
 </nav>
@@ -207,8 +207,8 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#features">
-    Features
+<a class="md-nav__link" href="#structure">
+    Structure
   </a>
 </li>
 </ul>
@@ -218,25 +218,41 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/ECE-IoT/esp-iot-framework/edit/master/docs/software-planning/connection-handler.md" title="Edit this page">
+<a class="md-content__button md-icon" href="https://github.com/ECE-IoT/esp-iot-framework/edit/master/docs/software-planning/sensors.md" title="Edit this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
-<h1 id="class-connectionhandler">Class - ConnectionHandler</h1>
-<p>The purpose of this class is to ensure that every remote connection is alive and maintained (Wifi, MQTT to broker).</p>
-<h2 id="features">Features</h2>
-<p>The main structure contains a state machine which handles the connection to the Wifi, sets up a TLS client for MQTT, enables a connection to the AWS MQTT Broker.</p>
-<h1 id="structure">Structure</h1>
-<p>Basic UML in order to understand the structure of the class </p>
+<h1 id="structure-for-implementing-sensor-modules">Structure for implementing Sensor Modules</h1>
+<p>A sensor module is a a type of measuring device which can be attached to the <strong>ESP32</strong> via a serial connection (I2C, 1WIRE). The sensors of the module measures physical quantities like temperature or humidity, etc. In order to get a general form for adding new sensor modules to the framework the following points should be taken into account:</p>
+<ul>
+<li>A newly written class for a sensor module should always implement the <code>EspComponent</code> superclass. That is necessary to ensure a general structure when calling the new sensor modules object.</li>
+<li>The measured physical values which can be read of the sensor should be fed into a new instance of the <code>sensor</code> class.</li>
+</ul>
+<h2 id="structure">Structure</h2>
+<p>Basic UML in order to understand the structure. The implemented sensor module <code>DHT22</code> is just an example.</p>
 <div class="mermaid">  classDiagram
-    class ConnectionHandler{
-      +ESPWifi esp_wifi
-      +ESPLogger esp_logger
-      +EspConfig *esp_config
-      +MQTTClient *mqtt_client
-      +enum states
-      -ConnectionHandler()
-      -state connectionStateMachine()
+    class EspComponent{
+      -void setup()
+      -void setup(T setup_config)
+      -void update()
+      -void setValue()
     }
+    class Sensor {
+      +float temperature
+      -char* sensor_type
+      -char* mqtt_topic
+      -Sensor(char* sensor_type, char* mqtt_topic)
+      -void setValue(float sensor_value)
+      -void updateValue()
+    }
+    class DHT22 {
+      -Sensor temperature
+      -Sensor humidity
+      -void setup()
+      -void setValue()
+      -void update()
+    }
+    EspComponent &lt;|-- DHT22
+    Sensor --&gt; DHT22 : contains
 </div>
 <hr/>
 <div class="md-source-file">
@@ -257,7 +273,7 @@
 </main>
 <footer class="md-footer">
 <nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Previous: Home" class="md-footer__link md-footer__link--prev" href="../.." rel="prev">
+<a aria-label="Previous: Class - ConnectionHandler" class="md-footer__link md-footer__link--prev" href="../connection-handler/" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
 </div>
@@ -266,21 +282,8 @@
 <span class="md-footer__direction">
                 Previous
               </span>
-              Home
+              Class - ConnectionHandler
             </div>
-</div>
-</a>
-<a aria-label="Next: Sensors" class="md-footer__link md-footer__link--next" href="../sensors/" rel="next">
-<div class="md-footer__title">
-<div class="md-ellipsis">
-<span class="md-footer__direction">
-                Next
-              </span>
-              Sensors
-            </div>
-</div>
-<div class="md-footer__button md-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"></path></svg>
 </div>
 </a>
 </nav>
