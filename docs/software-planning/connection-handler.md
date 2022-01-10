@@ -1,4 +1,4 @@
-# Class - connectionHandler
+# Class - ConnectionHandler
 The purpose of this class is to ensure that every remote connection is alive and maintained (Wifi, MQTT to broker).
 
 ## Features
@@ -17,7 +17,7 @@ Basic UML in order to understand the structure of the class
       +EspConfig *esp_config
       +MQTTClient *mqtt_client
       +enum states
-      -ConnectionHandler(MQTTClient new_mqtt_client, EspConfig new_esp_config)
+      -ConnectionHandler()
       -state connectionStateMachine()
     }
 ```
