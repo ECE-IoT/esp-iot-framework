@@ -1,40 +1,54 @@
 #include "config.h"
 
-EspConfig::EspConfig()
+EspConfig EspConfig::esp_config_instance_;
+
+void EspConfig::readConfig()
 {
-  spiffs.spiffsBeginn();
-  char* json_file = spiffs.readSpiffs(CONFIG_FILE);
+  spiffs_.spiffsBeginn();
+  char* json_file = spiffs_.readSpiffs(CONFIG_FILE);
   DynamicJsonDocument doc(1024);
   deserializeJson(doc, json_file);
 
-  aws_url    = strdup(doc["aws_url"]);
-  mqtt_topic = strdup(doc["mqtt_topic"]);
-  wifi_ssid  = strdup(doc["ssid"]);
-  wifi_pswd  = strdup(doc["password"]);
-  aws_port   = doc["aws_port"];
+  aws_url_    = strdup(doc["aws_url"]);
+  mqtt_pub_topic_ = strdup(doc["mqtt_topic"]); // strdup(doc["mqtt_pub_topic"]);
+  //mqtt_sub_topic = strdup(doc["mqtt_sub_topic"]);
+  //device_id = strdup(doc["device_id"]);
+  wifi_ssid_  = strdup(doc["ssid"]);
+  wifi_pswd_  = strdup(doc["password"]);
+  aws_port_   = doc["aws_port"];
 }
 
 char* EspConfig::getWifiSSID()
 {
-  return wifi_ssid;
+  return wifi_ssid_;
 }
 
-char* EspConfig::getWifiPWSD()
+char* EspConfig::getWifiPSWD()
 {
-  return wifi_pswd;
+  return wifi_pswd_;
 }
 
-char* EspConfig::getMqttTopic()
+char* EspConfig::getMqttPubTopic()
 {
-  return mqtt_topic;
+  return mqtt_pub_topic_;
 }
 
 char* EspConfig::getAwsUrl()
 {
-  return aws_url;
+  return aws_url_;
 }
 
-int EspConfig::getAwsPort()
+uint16_t EspConfig::getAwsPort()
 {
-  return aws_port;
+  return aws_port_;
+}
+
+char* EspConfig::getMqttSubTopic()
+{
+  return mqtt_sub_topic_;
+}
+
+char* EspConfig::getDeviceID()
+{
+  return device_id_;
 }
