@@ -18,8 +18,9 @@ Basic UML in order to understand the structure. The implemented sensor module `D
       -void setValue()
     }
     class Sensor {
-      +float temperature
+      +float sensor_value
       -char* sensor_type
+      -char* unit
       -char* mqtt_topic
       -Sensor(char* sensor_type, char* mqtt_topic)
       -void setValue(float sensor_value)
