@@ -28,14 +28,12 @@ void EspConnectionHandler::setup()
 
   //fill struct for mqtt
   mqtt_config.server_address = esp_config_->getAwsUrl();
-  mqtt_config.device_id = esp_config_->getDeviceID();
+  mqtt_config.device_id = esp_config_->getMqttPubTopic();;//esp_config_->getDeviceID();
   mqtt_config.subscribe_topic = esp_config_->getMqttSubTopic();
   mqtt_config.publish_topic =  esp_config_->getMqttPubTopic();
   mqtt_config.port =  esp_config_->getAwsPort();
-  mqtt_config.tls_client =  tls_client_;
 
-
-  esp_mqtt_->setup2(esp_config_->getAwsUrl(), esp_config_->getDeviceID(), esp_config_->getMqttSubTopic(), esp_config_->getMqttPubTopic(), esp_config_->getAwsPort(), tls_client_);
+  esp_mqtt_->setup(&mqtt_config);
 
 }
 
@@ -49,10 +47,12 @@ connection_states EspConnectionHandler::runHandler()
     if(esp_wifi_.statusWifi()==WL_CONNECTED)
     {
       state_ = CONNECT_MQTT;
+      wifi_reconnect_attempted = false;
     }
-    else
+    else if (wifi_reconnect_attempted == false)
     {
       esp_wifi_.reconnectWifi();
+      wifi_reconnect_attempted = true;   
     }
     break;
 

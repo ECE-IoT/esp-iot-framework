@@ -16,6 +16,7 @@ class EspConnectionHandler
   EspMqtt* esp_mqtt_;
   EspConfig* esp_config_;
   WiFiClientSecure tls_client_;
+  bool wifi_reconnect_attempted = false;
 
   connection_states state_ = CONNECT_WIFI;
 
