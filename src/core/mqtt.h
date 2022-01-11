@@ -6,6 +6,7 @@
 #include <MQTT.h>
 #include <WiFiClientSecure.h>
 #include <string>
+#include "core/keys.h"
 
 struct EspMqttConfig
 {
@@ -14,27 +15,27 @@ struct EspMqttConfig
   const char* subscribe_topic;
   const char* publish_topic;
   uint16_t port;
-  WiFiClientSecure tls_client;
 };
 
-class EspMqtt : public EspComponent<EspMqttConfig>
+class EspMqtt : public EspComponent<EspMqttConfig*>
 {
 private:
   static EspMqtt esp_mqtt_instance;
-  MQTTClient esp_mqtt_client;
+  MQTTClient esp_mqtt_client = MQTTClient(1024);
   WiFiClientSecure tls_client_;
   const char* server_adress_;
   const char* device_id_;
   const char* subscribe_topic_;
   const char* publish_topic_;
   uint16_t port_;
+  Keys esp_keys;
 
 public:
   static EspMqtt* getInstance()
   {
     return &esp_mqtt_instance;
   }
-  void setup(EspMqttConfig configuration) override;
+  void setup(EspMqttConfig* configuration) override;
   template <class T> void registerClient(T subscribe_callback(char* topic, char* payload));
   bool connect();
   bool publish(char* sub_topic, char* payload);
