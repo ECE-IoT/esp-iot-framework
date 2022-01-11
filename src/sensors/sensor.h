@@ -1,16 +1,19 @@
+#include <string>
+
 class Sensor
 {
   public:
-    struct value_range
-    {
-      float lower_value;
-      float upper_value;
-    };
-    float sensor_value;
-    char* unit;
-    char* sensor_type;
-    char* mqtt_topic;
+    int lower_value;
+    int upper_value;
+    float value;
+    std::string unit;
+    std::string sensor_type;
+    std::string mqtt_topic;
 
     void setValue();
     void updateValue();
+    void setupSensor();
+
+    Sensor(int, int, float, std::string, std::string, std::string)
 };
+
