@@ -12,7 +12,7 @@ void DHT_Sensor::updateValue()
   dht_.begin();
 }
 
-void DHT_Sensor::setValue();
+void DHT_Sensor::setValue()
 {
   if (DHT_Sensor.unit == "%")
   {

@@ -30,14 +30,19 @@ void loop()
 #include <Arduino.h>
 #include "DHT22"
 
-int hum_min = 0;
-int hum_max = 100;
+sensor1 DHT22;
+sensor1.value_range->lower_value = -20;
+sensor1.value_range->upper_value = 80;
+sensor1.sensor_unit = "°C";
+sensor1.sensor_type = "temperature";
+sensor1.mqtt_topic = "/temp";
 
-float temp_min = -20;
-float temp_max = 80;
-
-sensor1 = DHT22(value_range->temp_min, value_range->temp_max, "°C", "temperatur", "/temp");
-sensor2 = DHT22(value_range->hum_min, value_range->hum_max, "%", "humidity", "/hum");
+sensor2 DHT22;
+sensor2.value_range->lower_value = 0;
+sensor2.value_range->upper_value = 100;
+sensor2.sensor_unit = "%";
+sensor2.sensor_type = "humidity";
+sensor2.mqtt_topic = "/hum";
   
 void setup()
 {
