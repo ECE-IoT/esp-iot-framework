@@ -8,19 +8,13 @@ DHT_Sensor::DHT_Sensor(char type, char pin) : dht_(pin, type)
 
 void DHT_Sensor::updateValue()
 {
-  this->.updateValue();
-  dht_.begin();
+  
 }
 
-void DHT_Sensor::setValue()
-{
-  if (DHT_Sensor.unit == "%")
-  {
-    DHT_Sensor.sensor_value = dht_.readHumidity();
-  }
+/*
+dht_.begin();
+DHT_Sensor.sensor_value = dht_.readHumidity();
+DHT_Sensor.sensor_value = dht_.readTemperature();
+*/
 
-  else
-  {
-    DHT_Sensor.sensor_value = dht_.readTemperature();
-  }
-}
+
