@@ -10,11 +10,17 @@ void EspLogger::logBegin()
 void EspLogger::logError(String message)
 {
   String error_message = "ERROR " + message + "  timestamp: " + millis();
-  spiffs.appendLog(error_message, LOG_FILE);
+  char error_message_char[error_message.length()];
+  error_message.toCharArray(error_message_char, error_message.length());
+
+  spiffs.appendLog(error_message_char, LOG_FILE);
 }
 
 void EspLogger::logInfo(String message)
 {
   String info_message = "INFO " + message + "  timestamp: " + millis();
-  spiffs.appendLog(info_message, LOG_FILE);
+  char info_message_char[info_message.length()];
+  info_message.toCharArray(info_message_char, info_message.length());
+
+  spiffs.appendLog(info_message_char, LOG_FILE);
 }
