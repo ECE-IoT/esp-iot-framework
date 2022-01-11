@@ -14,7 +14,7 @@ private:
   char* aws_url_;
   char* mqtt_pub_topic_;
   char* mqtt_sub_topic_ = "temp"; /*Not implementet into the config file yet*/
-  char* device_id_ = "temp"; /*Not implementet into the config file yet*/
+  char* device_id_ = "test1234"; /*Not implementet into the config file yet*/
   char* wifi_ssid_;
   char* wifi_pswd_;
   uint16_t aws_port_;

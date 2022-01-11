@@ -8,9 +8,9 @@ class EspSpiffs
 {
 public:
   void spiffsBeginn();
-  char* readSpiffs(String path);
-  void appendLog(String message, String path);
-  void createFile(String path);
+  char* readSpiffs(char* path);
+  void appendLog(char* message, char* path);
+  void createFile(char* path);
 };
 
 #endif
