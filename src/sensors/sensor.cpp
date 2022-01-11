@@ -9,3 +9,14 @@ Sensor::Sensor(int lower_value, int upper_value, float value, std::string unit, 
     this->sensor_type = sensor_type;
     this->mqtt_topic = mqtt_topic;
 }
+
+void Sensor::updateValue()
+{
+
+
+}
+
+void Sensor::setValue(float value)
+{
+    this->value = value;
+}
