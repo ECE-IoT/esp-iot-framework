@@ -11,8 +11,8 @@ class EspLogger
 public:
   EspSpiffs spiffs;
   void logBegin();
-  void logError(String message);
-  void logInfo(String message);
+  void logError(char* message);
+  void logInfo(char* message);
 };
 
 #endif
