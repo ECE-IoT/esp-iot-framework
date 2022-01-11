@@ -1,28 +1,14 @@
 #include "wifi.h"
 
-EspWifi::EspWifi(char* wifi_ssid, char* wifi_pswd)
-{
-  ssid = wifi_ssid;
-  pswd = wifi_pswd;
-}
-
-void EspWifi::beginWifi()
+void EspWifi::beginWifi(char* wifi_ssid, char* wifi_pswd)
 {
   WiFi.mode(WIFI_STA);
-  WiFi.begin(ssid, pswd);
-
-  while (WiFi.status() != WL_CONNECTED)
-  {
-  }
+  WiFi.begin(wifi_ssid, wifi_pswd);
 }
 
 void EspWifi::reconnectWifi()
 {
   WiFi.reconnect();
-
-  while (WiFi.status() != WL_CONNECTED)
-  {
-  }
 }
 
 wl_status_t EspWifi::statusWifi()

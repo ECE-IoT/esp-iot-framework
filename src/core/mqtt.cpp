@@ -2,14 +2,21 @@
 
 EspMqtt EspMqtt::esp_mqtt_instance;
 
-void EspMqtt::setup(struct EspMqttConfig configuration)
+void EspMqtt::setup(struct EspMqttConfig* configuration)
 {
-  this->server_adress_   = configuration.server_address;
-  this->device_id_       = configuration.device_id;
-  this->subscribe_topic_ = configuration.subscribe_topic;
-  this->publish_topic_   = configuration.publish_topic;
-  this->port_            = configuration.port;
-  this->tls_client_      = configuration.tls_client;
+  this->esp_keys.begin();
+
+  this->server_adress_   = configuration->server_address;
+  this->device_id_       = configuration->device_id;
+  this->subscribe_topic_ = configuration->subscribe_topic;
+  this->publish_topic_   = configuration->publish_topic;
+  this->port_            = configuration->port;
+
+  this->tls_client_.setCACert(esp_keys.getRootCA());
+  this->tls_client_.setPrivateKey(esp_keys.getPrivateKey());
+  this->tls_client_.setCertificate(esp_keys.getDeviceCert());
+  
+  this->esp_mqtt_client.begin(this->server_adress_, this->port_, this->tls_client_);
 }
 
 template <class T> void EspMqtt::registerClient(T subscribe_callback(char* topic, char* payload))

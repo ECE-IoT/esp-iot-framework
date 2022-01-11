@@ -8,7 +8,7 @@ void EspSpiffs::spiffsBeginn()
   }
 }
 
-char* EspSpiffs::readSpiffs(String path)
+char* EspSpiffs::readSpiffs(char* path)
 {
   File file = SPIFFS.open(path);
 
@@ -26,7 +26,7 @@ char* EspSpiffs::readSpiffs(String path)
   return file_content;
 }
 
-void EspSpiffs::appendLog(String message, String path)
+void EspSpiffs::appendLog(char* message, char* path)
 {
   File file = SPIFFS.open(path, "a");
 
@@ -39,7 +39,7 @@ void EspSpiffs::appendLog(String message, String path)
   file.close();
 }
 
-void EspSpiffs::createFile(String path)
+void EspSpiffs::createFile(char* path)
 {
   File file = SPIFFS.open(path, "w+");
 

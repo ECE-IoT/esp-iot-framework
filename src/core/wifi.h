@@ -2,17 +2,13 @@
 #define ESP_IOT_WIFI
 
 #include <Arduino.h>
-#include <WiFiClientSecure.h>
+#include <WiFi.h>
+//#include <WiFiClientSecure.h>
 
 class EspWifi
 {
-private:
-  char* ssid;
-  char* pswd;
-
 public:
-  EspWifi(char* wifi_ssid, char* wifi_pswd);
-  void beginWifi();
+  void beginWifi(char* wifi_ssid, char* wifi_pswd);
   void reconnectWifi();
   wl_status_t statusWifi();
 };

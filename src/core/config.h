@@ -10,20 +10,29 @@
 class EspConfig
 {
 private:
-  char* aws_url;
-  char* mqtt_topic;
-  char* wifi_ssid;
-  char* wifi_pswd;
-  int aws_port;
-  EspSpiffs spiffs;
+  static EspConfig esp_config_instance_;
+  char* aws_url_;
+  char* mqtt_pub_topic_;
+  char* mqtt_sub_topic_ = "temp";     /*Not implementet into the config file yet*/
+  char* device_id_      = "test1234"; /*Not implementet into the config file yet*/
+  char* wifi_ssid_;
+  char* wifi_pswd_;
+  uint16_t aws_port_;
+  EspSpiffs spiffs_;
 
 public:
-  EspConfig();
+  static EspConfig* getInstance()
+  {
+    return &esp_config_instance_;
+  }
+  void readConfig();
   char* getWifiSSID();
-  char* getWifiPWSD();
-  char* getMqttTopic();
+  char* getWifiPSWD();
+  char* getMqttPubTopic();
+  char* getMqttSubTopic();
+  char* getDeviceID();
   char* getAwsUrl();
-  int getAwsPort();
+  uint16_t getAwsPort();
 };
 
 #endif
