@@ -11,6 +11,7 @@ public:
   virtual void setup(T setup_config){};
   virtual void update(){};
   virtual void setValue(){};
+  virtual void setValue(float value){};
 };
 
 #endif
