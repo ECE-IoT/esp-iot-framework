@@ -11,7 +11,7 @@
 class EspGasSensor : public EspSensor
 {
 public:
-  EspGasSensor(int32_t lower_boundary, int32_t upper_boundary);
+  EspGasSensor(int32_t lower_boundary, int32_t upper_boundary, char* unique_id);
 };
 
 #endif

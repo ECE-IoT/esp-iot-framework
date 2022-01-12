@@ -3,6 +3,7 @@
 
 #include "config.h"
 #include "mqtt.h"
+#include "ntp.h"
 #include "wifi.h"
 #include <Arduino.h>
 #include <WiFiClientSecure.h>
@@ -19,7 +20,9 @@ class EspConnectionHandler
 private:
   EspWifi esp_wifi_;
   EspMqtt* esp_mqtt_;
+  EspNTP* esp_ntp_;
   EspConfig* esp_config_;
+
   WiFiClientSecure tls_client_;
   bool wifi_reconnect_attempted = false;
 

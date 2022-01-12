@@ -5,6 +5,7 @@ void EspConnectionHandler::setup()
   EspMqttConfig mqtt_config;
   esp_mqtt_   = EspMqtt::getInstance();
   esp_config_ = EspConfig::getInstance();
+  esp_ntp_    = EspNTP::getInstance();
 
   if (esp_mqtt_ == NULL)
   {
@@ -13,6 +14,12 @@ void EspConnectionHandler::setup()
   }
 
   if (esp_config_ == NULL)
+  {
+    // TODO include error handling (e.g. write to log file)
+    return;
+  }
+
+  if (esp_ntp_ == NULL)
   {
     // TODO include error handling (e.g. write to log file)
     return;
@@ -34,6 +41,7 @@ void EspConnectionHandler::setup()
   mqtt_config.publish_topic   = esp_config_->getMqttPubTopic();
   mqtt_config.port            = esp_config_->getAwsPort();
 
+  esp_ntp_->setup(TZ_Europe_Vienna);
   esp_mqtt_->setup(&mqtt_config);
 }
 

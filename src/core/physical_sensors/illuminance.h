@@ -11,7 +11,7 @@
 class EspIlluminanceSensor : public EspSensor
 {
 public:
-  EspIlluminanceSensor(int32_t lower_boundary, int32_t upper_boundary);
+  EspIlluminanceSensor(int32_t lower_boundary, int32_t upper_boundary, char* unique_id);
 };
 
 #endif
