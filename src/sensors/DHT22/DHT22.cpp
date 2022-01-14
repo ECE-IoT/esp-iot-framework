@@ -3,8 +3,8 @@
 void DHT22::setup(uint8_t pin)
 {
   dht22             = DHT(pin, DHT_TYPE);
-  this->temperature = EspTemperatureSensor(-50, 100);
-  this->humidity    = EspHumiditySensor(0, 100);
+  this->temperature = EspTemperatureSensor(-50, 100, "1");
+  this->humidity    = EspHumiditySensor(0, 100, "1");
   dht22.begin();
 }
 

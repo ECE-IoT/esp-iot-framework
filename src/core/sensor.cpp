@@ -12,5 +12,7 @@ void EspSensor::setValue(float value)
 
 void EspSensor::updateMQTT()
 {
-  // do some mqtt stuff here
+  char* serialized_json_message =
+      this->esp_json_.serializeForSensor(this->current_value_, this->unit_, this->sensor_type_, this->unique_id_);
+  this->esp_mqtt_->publish(this->mqtt_topic_, serialized_json_message);
 }

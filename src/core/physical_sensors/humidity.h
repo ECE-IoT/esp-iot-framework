@@ -11,7 +11,7 @@
 class EspHumiditySensor : public EspSensor
 {
 public:
-  EspHumiditySensor(int32_t lower_boundary, int32_t upper_boundary);
+  EspHumiditySensor(int32_t lower_boundary, int32_t upper_boundary, char* unique_id);
 };
 
 #endif

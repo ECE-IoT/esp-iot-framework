@@ -4,6 +4,10 @@
 #include <Arduino.h>
 #include <functional>
 
+struct empty_unit
+{
+};
+
 template <class T> class EspComponent
 {
 public:
