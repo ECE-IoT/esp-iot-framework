@@ -26,7 +26,7 @@ void setup()
   Serial.begin(9600);
   Serial.println("Start");
 
-  // esp_mqtt = EspMqtt::getInstance();
+  esp_mqtt = EspMqtt::getInstance();
   esp_config = EspConfig::getInstance();
   esp_config->readConfig();
   esp_con_handler.setup();
@@ -49,4 +49,5 @@ void testPrint()
 {
   esp_dht.setValue();
   esp_dht.update();
+  Serial.println("in callback");
 }
