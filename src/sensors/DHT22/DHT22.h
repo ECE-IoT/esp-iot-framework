@@ -12,9 +12,9 @@
 class ESPDHT22 : public EspComponent<uint8_t>
 {
 private:
-  DHT dht22;
-  EspTemperatureSensor temperature;
-  EspHumiditySensor humidity;
+  DHT *dht22;
+  EspTemperatureSensor *temperature;
+  EspHumiditySensor *humidity;
 
 public:
   void setValue() override;
