@@ -8,6 +8,9 @@ file_path = os.path.join(dir_path, 'config_file.json')
 ## get user input-----------------------------------------
 ssid = input("Enter wifi ssid: ")
 pswd = input("Enter wifi password: ")
+name = input("Enter device name: ")
+pub_topic = input("Enter publish topic: ")
+sub_topic = input("Enter subscribe topic: ")
 
 
 ## create json--------------------------------------------
@@ -16,7 +19,9 @@ json_dict = {
   "password":pswd,
   "aws_url":"aq60dkt3q20bd-ats.iot.eu-central-1.amazonaws.com",
   "aws_port":8883, 
-  "mqtt_topic":"esp32-d1mini-01"
+  "mqtt_pub_topic":pub_topic,
+  "mqtt_sub_topic":sub_topic,
+  "device_id":name
 }
 
 file_data = json.dumps(json_dict, indent=0)

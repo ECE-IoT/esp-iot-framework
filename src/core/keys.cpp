@@ -4,8 +4,8 @@ void Keys::begin()
 {
   spiffs.spiffsBeginn();
   private_key_ = spiffs.readSpiffs("/esp32-d1mini-01.private.key");
-  device_cert_ = spiffs.readSpiffs("/esp32-d1mini-01.cert.pem");
-  root_ca_     = spiffs.readSpiffs("/root-CA.crt");
+  device_cert_ = spiffs.readSpiffs("/esp32-d1mini-01.cert.crt");
+  root_ca_     = spiffs.readSpiffs("/root-CA.pem");
 }
 
 char* Keys::getPrivateKey()

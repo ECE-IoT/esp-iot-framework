@@ -17,6 +17,6 @@ char* EspJson::serializeForSensor(float value, char* unit, char* sensor_type, ch
   json_document["VALUE"]            = value;
   json_document["UNIT"]             = unit;
   json_document["TIME"]             = esp_ntp_->getValue();
-  serializeJson(json_document, json_buffer);
+  serializeJson(json_document, Serial);
   return json_buffer;
 }

@@ -10,9 +10,9 @@ void EspConfig::readConfig()
   deserializeJson(doc, json_file);
 
   aws_url_    = strdup(doc["aws_url"]);
-  mqtt_pub_topic_ = strdup(doc["mqtt_topic"]); // strdup(doc["mqtt_pub_topic"]);
-  //mqtt_sub_topic = strdup(doc["mqtt_sub_topic"]);
-  //device_id = strdup(doc["device_id"]);
+  mqtt_pub_topic_ = strdup(doc["mqtt_pub_topic"]);
+  mqtt_sub_topic_ = strdup(doc["mqtt_sub_topic"]);
+  device_id_ = strdup(doc["device_id"]);
   wifi_ssid_  = strdup(doc["ssid"]);
   wifi_pswd_  = strdup(doc["password"]);
   aws_port_   = doc["aws_port"];
