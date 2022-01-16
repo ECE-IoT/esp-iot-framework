@@ -40,9 +40,9 @@ bool EspMqtt::connect()
 
 bool EspMqtt::publish(char* sub_topic, char* payload)
 {
-  char result_topic[100];
-  strcpy(result_topic, this->publish_topic_);
-  return this->esp_mqtt_client.publish((strcat(result_topic, sub_topic)), payload);
+  //char result_topic[100];
+  //strcpy(result_topic, this->publish_topic_);
+  return this->esp_mqtt_client.publish(this->publish_topic_, payload);//(strcat(result_topic, sub_topic)), payload);
 }
 
 bool EspMqtt::subscribe(const char* sub_topic)
