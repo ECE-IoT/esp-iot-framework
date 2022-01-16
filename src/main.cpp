@@ -48,5 +48,7 @@ void loop()
 void testPrint()
 {
   Serial.println("scheduler test");
-  Serial.println(esp_json.serializeForSensor(22.21 , "°C", "test", "420"));
+
+  char* asdf = esp_json.serializeForSensor(22.21 , "°C", "test", "420");
+  Serial.println(asdf);
 }

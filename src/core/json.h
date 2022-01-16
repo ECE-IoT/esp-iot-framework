@@ -11,6 +11,7 @@ class EspJson
 private:
   EspConfig* esp_config_;
   EspNTP* esp_ntp_;
+  char json_buffer[300];
 
 public:
   EspJson();
