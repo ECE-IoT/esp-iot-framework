@@ -21,7 +21,7 @@ class EspMqtt : public EspComponent<EspMqttConfig*>
 {
 private:
   static EspMqtt esp_mqtt_instance;
-  MQTTClient esp_mqtt_client = MQTTClient(1024);
+  MQTTClient esp_mqtt_client = MQTTClient(2048);
   WiFiClientSecure tls_client_;
   const char* server_adress_;
   const char* device_id_;
