@@ -4,19 +4,20 @@
 #include "core/spiffs.h"
 #include "core/scheduler.h"
 #include "core/json.h"
+#include "sensors/DHT22/DHT22.h"
 #include <Arduino.h>
 #include <WiFiClientSecure.h>
 
 using EspScheduler::iotScheduler;
 
-EspMqtt* esp_mqtt;
-EspConfig* esp_config;
+ESPDHT22 esp_dht22;
 
 EspConnectionHandler esp_con_handler;
-
 connection_states state;
-
 EspJson esp_json;
+
+EspMqtt* esp_mqtt;
+EspConfig* esp_config;
 
 void testPrint();
 
@@ -27,10 +28,9 @@ void setup()
 
   //esp_mqtt = EspMqtt::getInstance();
   esp_config = EspConfig::getInstance();
-  Serial.println("11");
   esp_config->readConfig();
-  Serial.println("22");
   esp_con_handler.setup();
+  esp_dht22.setup(25);
   Serial.println("Start loop");
 }
 
@@ -47,8 +47,6 @@ void loop()
 
 void testPrint()
 {
-  Serial.println("scheduler test");
-
-  char* asdf = esp_json.serializeForSensor(22.21 , "°C", "test", "420");
-  Serial.println(asdf);
+  esp_dht22.setValue();
+  esp_dht22.update();
 }

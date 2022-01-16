@@ -1,6 +1,6 @@
 #include "DHT22.h"
 
-void DHT22::setup(uint8_t pin)
+void ESPDHT22::setup(uint8_t pin)
 {
   dht22             = DHT(pin, DHT_TYPE);
   this->temperature = EspTemperatureSensor(-50, 100, "1");
@@ -8,13 +8,13 @@ void DHT22::setup(uint8_t pin)
   dht22.begin();
 }
 
-void DHT22::setValue()
+void ESPDHT22::setValue()
 {
   temperature.setValue(dht22.readTemperature());
   humidity.setValue(dht22.readHumidity());
 }
 
-void DHT22::update()
+void ESPDHT22::update()
 {
   temperature.updateMQTT();
   humidity.updateMQTT();
