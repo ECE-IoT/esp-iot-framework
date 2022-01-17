@@ -6,6 +6,7 @@
 #include "core/spiffs.h"
 #include "sensors/DHT22/DHT22.h"
 #include "sensors/LPS25/LPS25.h"
+#include "sensors/VEML7700/VEML7700.h"
 #include <Arduino.h>
 #include <WiFiClientSecure.h>
 
@@ -18,6 +19,7 @@ EspJson esp_json;
 /*Sensors*/
 EspDHT22 esp_dht;
 EspLPS25 esp_lps25;
+EspVEML7700 esp_veml;
 
 EspMqtt* esp_mqtt;
 EspConfig* esp_config;

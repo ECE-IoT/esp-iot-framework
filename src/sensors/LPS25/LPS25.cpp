@@ -3,8 +3,8 @@
 void EspLPS25::setup()
 {
   lps25             = new Adafruit_LPS25;
-  this->temperature = new EspTemperatureSensor(-50, 100, "1");
-  this->pressure    = new EspPressureSensor(260, 1260, "1");
+  this->temperature = new EspTemperatureSensor(-50, 100, "2");
+  this->pressure    = new EspPressureSensor(260, 1260, "2");
   lps25->begin_I2C();
 }
 
