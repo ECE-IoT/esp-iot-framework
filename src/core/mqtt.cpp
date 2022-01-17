@@ -43,6 +43,7 @@ bool EspMqtt::publish(char* sub_topic, char* payload)
 {
   char result_topic[100];
   strcpy(result_topic, esp_mqtt_instance.publish_topic_);
+  Serial.println(result_topic);
   return esp_mqtt_instance.esp_mqtt_client->publish(result_topic, payload);
 }
 
