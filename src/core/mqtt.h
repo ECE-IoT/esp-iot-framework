@@ -2,11 +2,11 @@
 #define ESP_IOT_MQTT
 
 #include "component.h"
+#include "core/keys.h"
 #include <Arduino.h>
 #include <MQTT.h>
 #include <WiFiClientSecure.h>
 #include <string>
-#include "core/keys.h"
 
 struct EspMqttConfig
 {
@@ -21,7 +21,7 @@ class EspMqtt : public EspComponent<EspMqttConfig*>
 {
 private:
   static EspMqtt esp_mqtt_instance;
-  MQTTClient esp_mqtt_client = MQTTClient(2048);
+  MQTTClient* esp_mqtt_client;
   WiFiClientSecure tls_client_;
   const char* server_adress_;
   const char* device_id_;

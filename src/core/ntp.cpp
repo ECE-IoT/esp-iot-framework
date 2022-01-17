@@ -9,5 +9,5 @@ void EspNTP::setup(char* time_zone)
 }
 char* EspNTP::getValue()
 {
-  return NTP.getTimeDateString(NTP.getFirstSync());
+  return NTP.getTimeDateString();
 }
