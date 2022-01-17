@@ -9,17 +9,19 @@
 #include <Wire.h>
 #include <Adafruit_Sensor.h>
 
-class ESPLPS25 : public EspComponent<uint8_t>
+class EspLPS25 : public EspComponent<uint8_t>
 {
 private:
   Adafruit_LPS25 *lps25;
   EspTemperatureSensor *temperature;
   EspPressureSensor *pressure;
+  sensors_event_t temp_event_;
+  sensors_event_t pressure_event_;
 
 public:
   void setValue() override;
   void update() override;
-  void setup(uint8_t pin) override;
+  void setup() override;
 };
 
 #endif

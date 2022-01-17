@@ -9,7 +9,7 @@
 #include "Arduino.h"
 #include <DHT.h>
 
-class ESPDHT22 : public EspComponent<uint8_t>
+class EspDHT22 : public EspComponent<uint8_t>
 {
 private:
   DHT *dht22;

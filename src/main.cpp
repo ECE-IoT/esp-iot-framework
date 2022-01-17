@@ -5,6 +5,7 @@
 #include "core/scheduler.h"
 #include "core/spiffs.h"
 #include "sensors/DHT22/DHT22.h"
+#include "sensors/LPS25/LPS25.h"
 #include <Arduino.h>
 #include <WiFiClientSecure.h>
 
@@ -14,7 +15,9 @@ EspConnectionHandler esp_con_handler;
 connection_states state;
 EspJson esp_json;
 
-ESPDHT22 esp_dht;
+/*Sensors*/
+EspDHT22 esp_dht;
+EspLPS25 esp_lps25;
 
 EspMqtt* esp_mqtt;
 EspConfig* esp_config;

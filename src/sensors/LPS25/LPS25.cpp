@@ -1,6 +1,6 @@
 #include "LPS25.h"
 
-void ESPLPS25::setup()
+void EspLPS25::setup()
 {
   lps25             = new Adafruit_LPS25;
   this->temperature = new EspTemperatureSensor(-50, 100, "1");
@@ -8,18 +8,16 @@ void ESPLPS25::setup()
   lps25->begin_I2C();
 }
 
-void ESPLPS25::setValue()
+void EspLPS25::setValue()
 {
-  temperature->setValue(lps25->get_event());
-  pressure->setValue(lps25->get_event());
+  
+  lps25->getEvent(&pressure_event_, &temp_event_);// get pressure
+
+  temperature->setValue(temp_event_.temperature);
+  pressure->setValue(pressure_event_.pressure);
 }
 
-sensors_event_t temp;
-sensors_event_t pressure;
-lps.getEvent(&pressure, &temp);// get pressure
-
-
-void ESPLPS25::update()
+void EspLPS25::update()
 {
   temperature->updateMQTT();
   pressure->updateMQTT();
