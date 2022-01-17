@@ -36,6 +36,8 @@ void setup()
   esp_config->readConfig();
   esp_con_handler.setup();
   esp_dht.setup(25);
+  esp_lps25.setup();
+  esp_veml.setup();
   Serial.println("Start loop");
 }
 
@@ -54,5 +56,9 @@ void testPrint()
 {
   esp_dht.setValue();
   esp_dht.update();
+  esp_lps25.setValue();
+  esp_lps25.update();
+  esp_veml.setValue();
+  esp_veml.update();
   Serial.println("in callback");
 }
