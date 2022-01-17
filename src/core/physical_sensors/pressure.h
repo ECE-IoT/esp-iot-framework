@@ -4,7 +4,7 @@
 #include "../sensor.h"
 #include "Arduino.h"
 
-#define PRESSURE_UNIT        "Pa"
+#define PRESSURE_UNIT        "hPa"
 #define PRESSURE_SENSOR_TYPE "pressure"
 #define PRESSURE_MQTT_TOPIC  "/pressure"
 
