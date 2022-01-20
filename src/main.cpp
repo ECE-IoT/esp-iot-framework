@@ -21,7 +21,7 @@ EspJson esp_json;
 EspDHT22 esp_dht;
 EspLPS25 esp_lps25;
 EspVEML7700 esp_veml;
-EspSCD30 esp_scd30;
+//EspSCD30 esp_scd30;
 
 EspMqtt* esp_mqtt;
 EspConfig* esp_config;
@@ -40,7 +40,7 @@ void setup()
   esp_dht.setup(25);
   esp_lps25.setup();
   esp_veml.setup();
-  esp_scd30.setup();
+  //esp_scd30.setup();
   Serial.println("Start loop");
 }
 
@@ -60,10 +60,10 @@ void testPrint()
   esp_dht.setValue();
   esp_lps25.setValue();
   esp_veml.setValue();
-  esp_scd30.setValue();
+  //esp_scd30.setValue();
   esp_dht.update();
   esp_lps25.update();
   esp_veml.update();
-  esp_scd30.update();
+  //esp_scd30.update();
   Serial.println("in callback");
 }
