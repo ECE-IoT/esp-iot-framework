@@ -4,6 +4,7 @@
 #include "component.h"
 #include "json.h"
 #include "mqtt.h"
+#include "ntp.h"
 #include <Arduino.h>
 #include <string>
 
@@ -17,7 +18,9 @@ protected:
   char* sensor_type_;
   char* mqtt_topic_;
   char* unique_id_;
+  char* time;
   EspMqtt* esp_mqtt_;
+  EspNTP* esp_ntp_;
   EspJson esp_json_;
 
 public:

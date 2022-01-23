@@ -2,6 +2,7 @@
 #define ESP_CONNECTION_HANDLER
 
 #include "config.h"
+#include "json.h"
 #include "mqtt.h"
 #include "ntp.h"
 #include "wifi.h"
@@ -22,6 +23,7 @@ private:
   EspMqtt* esp_mqtt_;
   EspNTP* esp_ntp_;
   EspConfig* esp_config_;
+  EspJson esp_json_;
 
   WiFiClientSecure tls_client_;
   bool wifi_reconnect_attempted = false;
@@ -30,6 +32,7 @@ private:
 
 public:
   void setup();
+  void runInitToAWS();
   connection_states runHandler();
 };
 

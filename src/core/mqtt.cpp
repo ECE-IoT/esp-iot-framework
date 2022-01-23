@@ -41,10 +41,13 @@ bool EspMqtt::connect()
 
 bool EspMqtt::publish(char* sub_topic, char* payload)
 {
+  if (sub_topic == "init")
+  {
+    return esp_mqtt_instance.esp_mqtt_client->publish(sub_topic, payload);
+  }
   char result_topic[100];
   strcpy(result_topic, esp_mqtt_instance.publish_topic_);
-  Serial.println(result_topic);
-  return esp_mqtt_instance.esp_mqtt_client->publish(result_topic, payload);
+  return esp_mqtt_instance.esp_mqtt_client->publish((strcat(result_topic, sub_topic)), payload);
 }
 
 bool EspMqtt::subscribe(const char* sub_topic)

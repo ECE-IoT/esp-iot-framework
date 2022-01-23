@@ -72,6 +72,7 @@ connection_states EspConnectionHandler::runHandler()
       if (esp_mqtt_->connect() == true)
       {
         state_ = CONNECTED;
+        this->runInitToAWS();
       }
     }
     else
@@ -98,4 +99,11 @@ connection_states EspConnectionHandler::runHandler()
   }
 
   return state_;
+}
+
+void EspConnectionHandler::runInitToAWS()
+{
+  char* serialized_json_message =
+      this->esp_json_.serializeForSensor(0.0, "NULL", "INIT_SENSOR", "INIT_SENSOR", this->esp_ntp_->getValue());
+  this->esp_mqtt_->publish("init", serialized_json_message);
 }
