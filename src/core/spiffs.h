@@ -9,6 +9,7 @@ class EspSpiffs
 public:
   void spiffsBeginn();
   char* readSpiffs(char* path);
+  bool printLog(char* path);
   void appendLog(char* message, char* path);
   void createFile(char* path);
 };
