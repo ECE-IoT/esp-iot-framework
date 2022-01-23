@@ -26,25 +26,27 @@ char* EspSpiffs::readSpiffs(char* path)
   return file_content;
 }
 
-bool EspSpiffs::printLog(char* path)
+void EspSpiffs::printLog(char* path)
 {
   File file = SPIFFS.open(path);
 
   if (!file)
   {
-    return false;
+    return;
   }
   size_t size        = file.size();
   char* file_content = (char*)malloc((size + 1) * sizeof(char));
 
   file.readBytes(file_content, size);
   file_content[size] = '\0';
+
+  file.print(""); // clear file
   file.close();
 
   Serial.println(file_content);
   free(file_content);
 
-  return true;
+  return;
 
 }
 

@@ -1,10 +1,29 @@
 #include "logger.h"
 
-void EspLogger::logBegin()
+void EspLogger::logBegin(uint8_t log_level, uint8_t log_output_level)
 {
-  Serial.println(spiffs.readSpiffs(LOG_FILE));
+  log_level_ = log_level;
+  log_output_level_ = log_output_level;
 
-  spiffs.createFile(LOG_FILE); // create / erases the existing file
+  if(log_output_level_ == LOG_OUTPUT_SERIAL_BEGIN || log_output_level_ == LOG_OUTPUT_SERIAL_DIRECT_BEGIN)
+  {
+    spiffs.printLog(LOG_FILE1);
+    spiffs.printLog(LOG_FILE2);
+    spiffs.printLog(LOG_FILE3);
+    
+  }
+}
+
+void EspLogger::logPrint(char* message)
+{
+  if(log_output_level_ == LOG_OUTPUT_SERIAL_DIRECT || log_output_level_ == LOG_OUTPUT_SERIAL_DIRECT_BEGIN)
+  {
+    Serial.println(message);
+  }
+  if(log_output_level_ == LOG_OUTPUT_SERIAL_BEGIN || log_output_level_ == LOG_OUTPUT_SERIAL_DIRECT_BEGIN)
+  {
+    // TODO write file rotation
+  }
 }
 
 void EspLogger::logError(char* message)
@@ -28,7 +47,6 @@ void EspLogger::logInfo(char* message)
   strcat(info_message, message);
   strcat(info_message, "  timestamp: ");
   strcat(info_message, (char*)millis());
-
 
   // String info_message = "INFO " + message + "  timestamp: " + millis();
   // char info_message_char[info_message.length()];
