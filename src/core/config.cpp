@@ -16,6 +16,9 @@ void EspConfig::readConfig()
   wifi_ssid_  = strdup(doc["ssid"]);
   wifi_pswd_  = strdup(doc["password"]);
   aws_port_   = doc["aws_port"];
+  logger_level_ = (uint8_t)doc["logger_level"];
+  logger_output_ = (uint8_t)doc["logger_output"];
+  device_position_ = strdup(doc["device_position"]);
 }
 
 char* EspConfig::getWifiSSID()
@@ -51,4 +54,19 @@ char* EspConfig::getMqttSubTopic()
 char* EspConfig::getDeviceID()
 {
   return device_id_;
+}
+
+char* EspConfig::getDevicePosition()
+{
+  return device_position_;
+}
+
+uint8_t EspConfig::getLoggerLevel()
+{
+  return logger_level_;
+}
+
+uint8_t EspConfig::getLoggerOutput()
+{
+  return logger_output_;
 }

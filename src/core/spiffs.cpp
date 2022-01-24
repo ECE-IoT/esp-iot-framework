@@ -28,7 +28,7 @@ char* EspSpiffs::readSpiffs(char* path)
 
 void EspSpiffs::printLog(char* path)
 {
-  File file = SPIFFS.open(path);
+  File file = SPIFFS.open(path, "r+");
 
   if (!file)
   {
@@ -40,7 +40,9 @@ void EspSpiffs::printLog(char* path)
   file.readBytes(file_content, size);
   file_content[size] = '\0';
 
-  file.print(""); // clear file
+  file.close();
+
+  file = SPIFFS.open(path, "w");
   file.close();
 
   Serial.println(file_content);
@@ -53,7 +55,6 @@ void EspSpiffs::printLog(char* path)
 void EspSpiffs::appendLog(char* message, char* path)
 {
   File file = SPIFFS.open(path, "a");
-
   if (!file)
   {
     return;
@@ -65,12 +66,11 @@ void EspSpiffs::appendLog(char* message, char* path)
 
 void EspSpiffs::createFile(char* path)
 {
-  File file = SPIFFS.open(path, "w+");
+  File file = SPIFFS.open(path, "w");
 
   if (!file)
   {
     return;
   }
-  file.print("");
   file.close();
 }
