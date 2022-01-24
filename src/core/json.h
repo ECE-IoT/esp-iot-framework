@@ -13,7 +13,7 @@ private:
 
 public:
   EspJson();
-  char* serializeForSensor(float value, char* unit, char* senor_type, char* unique_sensor_id, char* time);
+  char* serializeForSensor(float value, char* unit, char* senor_type, char* unique_sensor_id, uint64_t time);
 };
 
 #endif
