@@ -5,7 +5,7 @@ EspJson::EspJson()
   esp_config_ = EspConfig::getInstance();
 }
 
-char* EspJson::serializeForSensor(float value, char* unit, char* sensor_type, char* unique_sensor_id, char* time)
+char* EspJson::serializeForSensor(float value, char* unit, char* sensor_type, char* unique_sensor_id, uint64_t time)
 {
   StaticJsonDocument<300> json_document;
   // char json_buffer[300];

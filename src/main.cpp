@@ -54,7 +54,7 @@ void loop()
   state = esp_con_handler.runHandler();
   if (state == 2)
   {
-    iotScheduler(2000, updateSensor);
+    iotScheduler(30000, updateSensor);
   }
 }
 
