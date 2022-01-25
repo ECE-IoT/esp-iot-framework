@@ -7,6 +7,11 @@ void EspNTP::setup(char* time_zone)
   NTP.setTimeZone(time_zone);
   NTP.begin();
 }
+char* EspNTP::getValueChar()
+{
+  return NTP.getTimeDateString();
+}
+
 uint64_t EspNTP::getValue()
 {
   uint64_t seconds = NTP.millis() / 1000;
