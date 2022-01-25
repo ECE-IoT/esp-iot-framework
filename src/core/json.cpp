@@ -17,6 +17,7 @@ char* EspJson::serializeForSensor(float value, char* unit, char* sensor_type, ch
   json_document["VALUE"]            = value;
   json_document["UNIT"]             = unit;
   json_document["TIME"]             = time;
+  json_document["LOCATION"]         = esp_config_->getDevicePosition();
   serializeJson(json_document, json_buffer, 300);
   return json_buffer;
 }
