@@ -17,7 +17,7 @@ public:
   }
   void setup(char* time_zone) override;
   char* getValueChar();
-  char* getValue();
+  uint64_t getValue();
 };
 
 #endif

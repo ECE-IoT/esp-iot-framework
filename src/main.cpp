@@ -56,11 +56,19 @@ void setup()
 
 void loop()
 {
+<<<<<<< HEAD
   // state = esp_con_handler.runHandler();
   // if (state == 2)
   // {
   //   iotScheduler(2000, updateSensor);
   // }
+=======
+  state = esp_con_handler.runHandler();
+  if (state == 2)
+  {
+    iotScheduler(30000, updateSensor);
+  }
+>>>>>>> master
 }
 
 void updateSensor()

@@ -18,7 +18,7 @@ protected:
   char* sensor_type_;
   char* mqtt_topic_;
   char* unique_id_;
-  char* time;
+  uint64_t time;
   EspMqtt* esp_mqtt_;
   EspNTP* esp_ntp_;
   EspJson esp_json_;

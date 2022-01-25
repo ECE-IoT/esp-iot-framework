@@ -12,7 +12,8 @@ char* EspNTP::getValueChar()
   return NTP.getTimeDateString();
 }
 
-char* EspNTP::getValue()
+uint64_t EspNTP::getValue()
 {
-  return NTP.getTimeDateString();
+  uint64_t seconds = NTP.millis() / 1000;
+  return seconds;
 }
