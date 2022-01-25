@@ -4,10 +4,10 @@
 #include "core/config.h"
 #include "core/connection_handler.h"
 #include "core/json.h"
+#include "core/logger.h"
 #include "core/mqtt.h"
 #include "core/scheduler.h"
 #include "core/spiffs.h"
-#include "core/logger.h"
 /**
  * SENSOR INPUTS
  */
@@ -35,7 +35,6 @@ EspVEML7700 esp_veml;
 EspMqtt* esp_mqtt;
 EspConfig* esp_config;
 
-
 void updateSensor();
 
 void setup()
@@ -51,24 +50,15 @@ void setup()
   esp_logger->logBegin(esp_config->getLoggerLevel(), esp_config->getLoggerOutput());
   // esp_dht.setup(4);
   // esp_veml.setup();
-
 }
 
 void loop()
 {
-<<<<<<< HEAD
-  // state = esp_con_handler.runHandler();
-  // if (state == 2)
-  // {
-  //   iotScheduler(2000, updateSensor);
-  // }
-=======
   state = esp_con_handler.runHandler();
   if (state == 2)
   {
     iotScheduler(30000, updateSensor);
   }
->>>>>>> master
 }
 
 void updateSensor()
