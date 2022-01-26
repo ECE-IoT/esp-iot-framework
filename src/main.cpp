@@ -13,6 +13,7 @@
  */
 #include "sensors/DHT22/DHT22.h"
 #include "sensors/LPS25/LPS25.h"
+#include "sensors/SCD30/SCD30.h"
 #include "sensors/VEML7700/VEML7700.h"
 /**
  * LIBS
@@ -28,11 +29,8 @@ EspJson esp_json;
 EspLogger* esp_logger;
 
 /*Sensors*/
-EspDHT22 esp_dht;
-DHT22Config dht22_config;
-
 EspLPS25 esp_lps25;
-EspVEML7700 esp_veml;
+EspSCD30 esp_scd30;
 
 EspMqtt* esp_mqtt;
 EspConfig* esp_config;
@@ -43,18 +41,14 @@ void setup()
 {
   Serial.begin(9600);
 
-  dht22_config.pin = 25;
-  dht22_config.id  = "dht22_lab124";
-
-  esp_mqtt         = EspMqtt::getInstance();
-  esp_config       = EspConfig::getInstance();
-  esp_logger       = EspLogger::getInstance();
+  esp_mqtt   = EspMqtt::getInstance();
+  esp_config = EspConfig::getInstance();
+  esp_logger = EspLogger::getInstance();
   esp_config->readConfig();
   esp_con_handler.setup();
 
-  // esp_logger->logBegin(esp_config->getLoggerLevel(), esp_config->getLoggerOutput());
-  esp_dht.setup(&dht22_config);
-  esp_veml.setup("veml_lab124");
+  esp_lps25.setup("lps25_124");
+  esp_scd30.setup("scd30_124");
 }
 
 void loop()
@@ -71,11 +65,11 @@ void updateSensor()
   /**
    * READ THE SENSOR VALUE
    */
-  esp_dht.setValue();
-  esp_veml.setValue();
+  esp_lps25.setValue();
+  esp_scd30.setValue();
   /**
    * PUBLISH SENSOR VALUE TO AWS
    */
-  esp_dht.update();
-  esp_veml.update();
+  esp_lps25.update();
+  esp_scd30.update();
 }
