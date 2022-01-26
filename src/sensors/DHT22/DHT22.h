@@ -9,17 +9,23 @@
 #include "Arduino.h"
 #include <DHT.h>
 
-class EspDHT22 : public EspComponent<uint8_t>
+struct DHT22Config
+{
+  uint8_t pin;
+  char* id;
+};
+
+class EspDHT22 : public EspComponent<DHT22Config*>
 {
 private:
-  DHT *dht22;
-  EspTemperatureSensor *temperature;
-  EspHumiditySensor *humidity;
+  DHT* dht22;
+  EspTemperatureSensor* temperature;
+  EspHumiditySensor* humidity;
 
 public:
   void setValue() override;
   void update() override;
-  void setup(uint8_t pin) override;
+  void setup(DHT22Config* config) override;
 };
 
 #endif

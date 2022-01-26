@@ -29,6 +29,8 @@ EspLogger* esp_logger;
 
 /*Sensors*/
 EspDHT22 esp_dht;
+DHT22Config dht22_config;
+
 EspLPS25 esp_lps25;
 EspVEML7700 esp_veml;
 
@@ -41,15 +43,18 @@ void setup()
 {
   Serial.begin(9600);
 
-  // esp_mqtt   = EspMqtt::getInstance();
-  esp_config = EspConfig::getInstance();
-  esp_logger = EspLogger::getInstance();
-  esp_config->readConfig();
-  // esp_con_handler.setup();
+  dht22_config.pin = 25;
+  dht22_config.id  = "dht22_lab124";
 
-  esp_logger->logBegin(esp_config->getLoggerLevel(), esp_config->getLoggerOutput());
-  // esp_dht.setup(4);
-  // esp_veml.setup();
+  esp_mqtt         = EspMqtt::getInstance();
+  esp_config       = EspConfig::getInstance();
+  esp_logger       = EspLogger::getInstance();
+  esp_config->readConfig();
+  esp_con_handler.setup();
+
+  // esp_logger->logBegin(esp_config->getLoggerLevel(), esp_config->getLoggerOutput());
+  esp_dht.setup(&dht22_config);
+  esp_veml.setup("veml_lab124");
 }
 
 void loop()
@@ -57,7 +62,7 @@ void loop()
   state = esp_con_handler.runHandler();
   if (state == 2)
   {
-    iotScheduler(30000, updateSensor);
+    iotScheduler(60000, updateSensor);
   }
 }
 
