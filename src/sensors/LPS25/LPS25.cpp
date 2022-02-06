@@ -12,9 +12,10 @@ void EspLPS25::setValue()
 {
 
   lps25->getEvent(&pressure_event_, &temp_event_); // get pressure
-
-  temperature->setValue(temp_event_.temperature);
-  pressure->setValue(pressure_event_.pressure);
+  float temp = temp_event_.temperature;
+  float prs  = pressure_event_.pressure;
+  temperature->setValue(temp);
+  pressure->setValue(prs);
 }
 
 void EspLPS25::update()

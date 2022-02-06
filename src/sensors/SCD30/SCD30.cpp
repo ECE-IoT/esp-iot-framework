@@ -12,7 +12,6 @@ void EspSCD30::setup(char* id)
 void EspSCD30::setValue()
 {
   scd30->read();
-
   temperature->setValue(scd30->temperature);
   humidity->setValue(scd30->relative_humidity);
   co2->setValue(scd30->CO2);

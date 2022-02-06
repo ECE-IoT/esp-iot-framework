@@ -28,9 +28,11 @@ connection_states state;
 EspJson esp_json;
 EspLogger* esp_logger;
 
+DHT22Config dht_config;
+
 /*Sensors*/
-EspLPS25 esp_lps25;
-EspSCD30 esp_scd30;
+EspDHT22 esp_dht22;
+EspLPS25 esp_lps;
 
 EspMqtt* esp_mqtt;
 EspConfig* esp_config;
@@ -41,14 +43,17 @@ void setup()
 {
   Serial.begin(9600);
 
-  esp_mqtt   = EspMqtt::getInstance();
-  esp_config = EspConfig::getInstance();
-  esp_logger = EspLogger::getInstance();
+  dht_config.pin = 25;
+  dht_config.id  = "dht22_lab124";
+
+  esp_mqtt       = EspMqtt::getInstance();
+  esp_config     = EspConfig::getInstance();
+  esp_logger     = EspLogger::getInstance();
   esp_config->readConfig();
   esp_con_handler.setup();
 
-  esp_lps25.setup("lps25_124");
-  esp_scd30.setup("scd30_124");
+  esp_dht22.setup(&dht_config);
+  esp_lps.setup("lps25_lab124");
 }
 
 void loop()
@@ -65,11 +70,11 @@ void updateSensor()
   /**
    * READ THE SENSOR VALUE
    */
-  esp_lps25.setValue();
-  esp_scd30.setValue();
+  esp_dht22.setValue();
+  esp_lps.setValue();
   /**
    * PUBLISH SENSOR VALUE TO AWS
    */
-  esp_lps25.update();
-  esp_scd30.update();
+  esp_dht22.update();
+  esp_lps.update();
 }

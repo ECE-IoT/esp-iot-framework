@@ -1,15 +1,19 @@
 site_name: ESP IoT Framework
 nav:
-  - Home: index.md
-  - Software Planning: 
-    - Class - ConnectionHandler: software-planning/connection-handler.md
-    - Sensors: software-planning/sensors.md
+  - Home: 
+      Welcome: index.md
+      Setup:
+        Getting Started: setup/setup.md
+        Structure: setup/structure.md
+
 
 repo_url: https://github.com/ECE-IoT/esp-iot-framework
 
 theme:
   name: material
   language: en
+  logo: assets/logo.png
+  favicon: assets/logo.png
   features:
     - navigation.tabs
     - navigation.top
@@ -52,5 +56,7 @@ markdown_extensions:
           format: !!python/name:mermaid2.fence_mermaid
   - pymdownx.smartsymbols
   - pymdownx.critic
+  - pymdownx.tabbed:
+      alternate_style: true
   - pymdownx.tasklist:
       custom_checkbox: true
