@@ -28,8 +28,8 @@ theme:
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: indigo
-      accent: light-blue
+      primary: green
+      accent: deep purple
       toggle:
         icon: material/toggle-switch-off-outline
         name: Switch to dark mode
