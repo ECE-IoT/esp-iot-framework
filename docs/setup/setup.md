@@ -26,9 +26,10 @@ The project requires some python packages which are essential f.e. for embedded 
     python3 -m pip install -r requirements.txt
     ```
 
-After the installation you should be able to use `mkdocs` and `pio`, which are the `CLI` tools for the documentation and platformIO. 
+After the installation you should be able to use `mkdocs` and `pio`, which are the `CLI` tools for the documentation and platformIO.
 
-
+!!! HINT
+    For more information about `mkdocs` head to [Documentation](setup/../documentation.md)
 
 ## Extensions
 
@@ -39,4 +40,5 @@ This list contains some good extensions which make developing code way easier. A
 * [C++ Extension Pack](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools-extension-pack)
 * [C/C++ Themes](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools-themes)
 * [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
-* [Pylance](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance) 
+* [Pylance](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance)
+* [Mkdocs](https://github.com/mkdocs/mkdocs)

@@ -5,6 +5,10 @@ nav:
       Setup:
         Getting Started: setup/setup.md
         Structure: setup/structure.md
+        Coding Style: 
+          C++: setup/coding-style/cpp.md
+          Git: setup/coding-style/git.md
+        Documentation: setup/documentation.md
 
 
 repo_url: https://github.com/ECE-IoT/esp-iot-framework
@@ -27,8 +31,8 @@ theme:
         name: Switch to dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: indigo
-      accent: deep orange
+      primary: deep purple
+      accent: green
       toggle:
         icon: material/toggle-switch
         name: Switch to light mode
