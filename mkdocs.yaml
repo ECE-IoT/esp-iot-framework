@@ -9,6 +9,10 @@ nav:
           C++: setup/coding-style/cpp.md
           Git: setup/coding-style/git.md
         Documentation: setup/documentation.md
+  - Core: 
+      Introduction: core/index.md
+  - Sensors:
+      Introduction: sensors/index.md
 
 
 repo_url: https://github.com/ECE-IoT/esp-iot-framework
