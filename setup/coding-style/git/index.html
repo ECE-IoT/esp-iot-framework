@@ -5,16 +5,16 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="../../assets/logo.png" rel="icon"/>
+<link href="../../../assets/logo.png" rel="icon"/>
 <meta content="mkdocs-1.2.3, mkdocs-material-8.1.10" name="generator"/>
-<title>Structure for implementing Sensor Modules - ESP IoT Framework</title>
-<link href="../../assets/stylesheets/main.d6be258b.min.css" rel="stylesheet"/>
-<link href="../../assets/stylesheets/palette.e6a45f82.min.css" rel="stylesheet"/>
+<title>Git - ESP IoT Framework</title>
+<link href="../../../assets/stylesheets/main.d6be258b.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/palette.e6a45f82.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-<link href="../../assets/_mkdocstrings.css" rel="stylesheet"/>
-<script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../../../assets/_mkdocstrings.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 </head>
 <body data-md-color-accent="light-blue" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
 <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
@@ -22,7 +22,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#structure-for-implementing-sensor-modules">
+<a class="md-skip" href="#branching-system">
           Skip to content
         </a>
 </div>
@@ -30,8 +30,8 @@
 </div>
 <header class="md-header" data-md-component="header">
 <nav aria-label="Header" class="md-header__inner md-grid">
-<a aria-label="ESP IoT Framework" class="md-header__button md-logo" data-md-component="logo" href="../.." title="ESP IoT Framework">
-<img alt="logo" src="../../assets/logo.png"/>
+<a aria-label="ESP IoT Framework" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="ESP IoT Framework">
+<img alt="logo" src="../../../assets/logo.png"/>
 </a>
 <label class="md-header__button md-icon" for="__drawer">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"></path></svg>
@@ -46,7 +46,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Structure for implementing Sensor Modules
+              Git
             
           </span>
 </div>
@@ -109,7 +109,7 @@
 <div class="md-tabs__inner md-grid">
 <ul class="md-tabs__list">
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../..">
+<a class="md-tabs__link md-tabs__link--active" href="../../..">
         Home
       </a>
 </li>
@@ -123,8 +123,8 @@
 <div class="md-sidebar__inner">
 <nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
 <label class="md-nav__title" for="__drawer">
-<a aria-label="ESP IoT Framework" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="ESP IoT Framework">
-<img alt="logo" src="../../assets/logo.png"/>
+<a aria-label="ESP IoT Framework" class="md-nav__button md-logo" data-md-component="logo" href="../../.." title="ESP IoT Framework">
+<img alt="logo" src="../../../assets/logo.png"/>
 </a>
     ESP IoT Framework
   </label>
@@ -139,8 +139,8 @@
 </a>
 </div>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" id="__nav_1" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" id="__nav_1" type="checkbox"/>
 <label class="md-nav__link" for="__nav_1">
           Home
           <span class="md-nav__icon md-icon"></span>
@@ -152,12 +152,12 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../..">
+<a class="md-nav__link" href="../../..">
         Welcome
       </a>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_2" id="__nav_1_2" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_2" id="__nav_1_2" type="checkbox"/>
 <label class="md-nav__link" for="__nav_1_2">
           Setup
           <span class="md-nav__icon md-icon"></span>
@@ -169,17 +169,17 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../setup/setup/">
+<a class="md-nav__link" href="../../setup/">
         Getting Started
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../setup/structure/">
+<a class="md-nav__link" href="../../structure/">
         Structure
       </a>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_2_3" id="__nav_1_2_3" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_2_3" id="__nav_1_2_3" type="checkbox"/>
 <label class="md-nav__link" for="__nav_1_2_3">
           Coding Style
           <span class="md-nav__icon md-icon"></span>
@@ -191,20 +191,43 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../setup/coding-style/cpp/">
+<a class="md-nav__link" href="../cpp/">
         C++
       </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../setup/coding-style/git/">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Git
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
         Git
       </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#commit-style">
+    Commit Style
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#creating-pull-requests">
+    Creating Pull Requests
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../setup/documentation/">
+<a class="md-nav__link" href="../../documentation/">
         Documentation
       </a>
 </li>
@@ -229,8 +252,13 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#structure">
-    Structure
+<a class="md-nav__link" href="#commit-style">
+    Commit Style
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#creating-pull-requests">
+    Creating Pull Requests
   </a>
 </li>
 </ul>
@@ -240,49 +268,50 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/ECE-IoT/esp-iot-framework/edit/master/docs/software-planning/sensors.md" title="Edit this page">
+<a class="md-content__button md-icon" href="https://github.com/ECE-IoT/esp-iot-framework/edit/master/docs/setup/coding-style/git.md" title="Edit this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
-<h1 id="structure-for-implementing-sensor-modules">Structure for implementing Sensor Modules</h1>
-<p>A sensor module is a a type of measuring device which can be attached to the <strong>ESP32</strong> via a serial connection (I2C, 1WIRE). The sensors of the module measures physical quantities like temperature or humidity, etc. In order to get a general form for adding new sensor modules to the framework the following points should be taken into account:</p>
-<ul>
-<li>A newly written class for a sensor module should always implement the <code>EspComponent</code> superclass. That is necessary to ensure a general structure when calling the new sensor modules object.</li>
-<li>The measured physical values which can be read of the sensor should be fed into a new instance of the <code>sensor</code> class.</li>
-</ul>
-<h2 id="structure">Structure</h2>
-<p>Basic UML in order to understand the structure. The implemented sensor module <code>DHT22</code> is just an example.</p>
-<div class="mermaid">  classDiagram
-    class EspComponent{
-      -void setup()
-      -void setup(T setup_config)
-      -void update()
-      -void setValue()
-    }
-    class Sensor {
-      +float sensor_value
-      -char* sensor_type
-      -char* unit
-      -char* mqtt_topic
-      -Sensor(char* sensor_type, char* mqtt_topic)
-      -void setValue(float sensor_value)
-      -void updateValue()
-    }
-    class DHT22 {
-      -Sensor temperature
-      -Sensor humidity
-      -void setup()
-      -void setValue()
-      -void update()
-    }
-    EspComponent &lt;|-- DHT22
-    Sensor --&gt; DHT22 : contains
+<h1 id="branching-system">Branching System</h1>
+<h2 id="commit-style">Commit Style</h2>
+<p>In order to achieve a uniform naming for commit messages the following <strong>commit style</strong> should be used when creating a new commit message. </p>
+<table>
+<thead>
+<tr>
+<th>Keyword</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ADD</td>
+<td>Is used if there is a new change in the code. <strong>f.e</strong> <code>git commit -m "ADD function XY()"</code></td>
+</tr>
+<tr>
+<td>FIX</td>
+<td>Used for minor changes, bugfixes of an already existing part of the code. <strong>f.e</strong> <code>git commit -m "FIX functionality of XY"</code></td>
+</tr>
+<tr>
+<td>REF</td>
+<td>Written short for: REFACTOR. Is used when there is a major change in multiple code-segments and the structure of the code is reworked. <strong>f.e</strong> <code>git commit -m "UPDATE setup of analog sensors"</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="creating-pull-requests">Creating Pull Requests</h2>
+<p>In order to keep the <code>master</code>branch clean and functioning the prototyping repository has a <strong>branch protection rule</strong>. When someone wants to merge code onto the <code>master</code> branche a <strong>pull request</strong> has to be made. The <strong>pull request</strong> informs the <code>admin</code> of the repository to have a look over the code in order to approve if this its functioning and good code which can be merged without hesitation. In order to understand how to create a <strong>pull request</strong> have a look <a href="https://www.digitalocean.com/community/tutorials/how-to-create-a-pull-request-on-github">here</a></p>
+<div class="footnote">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>source: <a href="https://codeburst.io/git-and-github-in-a-nutshell-b0a3cc06458f">https://codeburst.io/git-and-github-in-a-nutshell-b0a3cc06458f</a> <a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
+</ol>
 </div>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      2022-01-10
+      2022-02-08
     
   </small>
 </div>
@@ -295,6 +324,34 @@
           </a>
 </main>
 <footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a aria-label="Previous: C++" class="md-footer__link md-footer__link--prev" href="../cpp/" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Previous
+              </span>
+              C++
+            </div>
+</div>
+</a>
+<a aria-label="Next: Documentation" class="md-footer__link md-footer__link--next" href="../../documentation/" rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Next
+              </span>
+              Documentation
+            </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"></path></svg>
+</div>
+</a>
+</nav>
 <div class="md-footer-meta md-typeset">
 <div class="md-footer-meta__inner md-grid">
 <div class="md-copyright">
@@ -312,9 +369,7 @@
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.092fa1f6.min.js"}</script>
-<script src="../../assets/javascripts/bundle.e3b2bf44.min.js"></script>
-<script src="https://unpkg.com/mermaid@8.8.0/dist/mermaid.min.js"></script><script>mermaid.initialize({
-    theme: (JSON.parse(window.localStorage.getItem('/.__palette')).index == 1) ? 'dark' : 'light'
-});</script></body>
+<script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.092fa1f6.min.js"}</script>
+<script src="../../../assets/javascripts/bundle.e3b2bf44.min.js"></script>
+</body>
 </html>
