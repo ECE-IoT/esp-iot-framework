@@ -4,6 +4,18 @@ nav:
   - Software Planning: 
     - Class - ConnectionHandler: software-planning/connection-handler.md
     - Sensors: software-planning/sensors.md
+  - Framework Documentation:
+    - ESP Core:
+      - Overview: core/overview.md
+      - Getting Started: core/getting_started.md
+      - Core Classes:
+        - Config: core/core_classes/esp_config.md
+        - Spiffs: core/core_classes/esp_spiffs.md
+        - Wifi: core/core_classes/esp_wifi.md
+        - Connection Handler: core/core_classes/esp_connection_handler.md
+        - Keys: core/core_classes/esp_keys.md
+        - Logger: core/core_classes/esp_logger.md
+
 
 repo_url: https://github.com/ECE-IoT/esp-iot-framework
 
