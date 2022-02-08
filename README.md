@@ -17,7 +17,7 @@ This project can be accessed via the MIT License. Based upon this license the pr
 
 ## Getting started
 
-In order to get started with developing or using the code head over to [Setup](docs/setup/setup.md)
+In order to get started with developing or using the code head over to [Setup](https://ece-iot.github.io/esp-iot-framework/setup/setup/)
 
 ## Documentation
 
