@@ -61,7 +61,7 @@ For the output one of the following options can be slected:
 
     Not output at all.
 
-### Log file storing
+### Log file storrage
 
 The logged information is stored in three files on the SPIFFS. Each has a length of 100 lines. This is determined by the LOG_FILE_MAX_ROWS definition. This limits the logging to a total of 300 messages with the purpose of preventing Flash from becoming completely full if the program runs for a very long time. When all three files are full, the logger starts again with the first file and overwrites it.
 
