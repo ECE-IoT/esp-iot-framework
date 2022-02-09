@@ -31,16 +31,8 @@ On the ESP device the configuration file is stored in the [SPIFFS](esp_spiffs.md
 
 To uplode the configuration we suggest to use PlatformIO but you are also free to use a other option like the [Ardunio-IDE](https://randomnerdtutorials.com/install-esp32-filesystem-uploader-arduino-ide/).
 
-**To uploade the file with PlatformIO:** 
+The upload process is described [here](esp_spiffs.md).
 
-1. Connect your ESP to your computer using a USB cable.
-
-2. In VS Code, open the PlatformIO extension on the left side and then open the esp device folder under *PROJECT TASKS*. You should then see a view similar to the following image. 
-![folder image](./../../assets/upload_spiffs.png)
-
-3. Click on *Build Filesystem Image* and wait unitl the task finishes. This is indicated when SUCCESS is printed at the terminal. What happens is that the content in the top directory data is used to build a spiffs image.
-
-4. Click on *Upload Filesystem Image*. Now the previously build image is uploaded to the flash storage of the connected ESP.
 
 ### EspConfig Class
 
@@ -49,3 +41,5 @@ The Esp_Config class is used on the ESP to read the configuration file from SPIF
 The class is implemented as singelton. Therefore the normal way to get an object of the class is to call getInstance() and then a object pointer will be returned.
 
 To read the config file you have to call only once the readConfig() function of the EspConfig object.
+
+This class uses the class [Esp_Spiffs](esp_spiffs.md) to read the SPIFFS and the library [ArduinoJson.h](https://github.com/bblanchon/ArduinoJson) to parse the json file.
