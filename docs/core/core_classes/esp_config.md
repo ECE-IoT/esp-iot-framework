@@ -38,7 +38,7 @@ The upload process is described [here](esp_spiffs.md).
 
 The Esp_Config class is used on the ESP to read the configuration file from SPIFFS and to make the its contents available through get....() functions.
 
-The class is implemented as singelton. Therefore the normal way to get an object of the class is to call getInstance() and then a object pointer will be returned.
+The class is implemented as singelton. Therefore the normal way to get an object of the class is to call getInstance() and then a pointer to the object will be returned.
 
 To read the config file you have to call only once the readConfig() function of the EspConfig object.
 
