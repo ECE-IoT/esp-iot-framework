@@ -1,4 +1,4 @@
-# ESP IoT Core functionality overview
+# ESP IoT Core introduction
 
 ## Purpose
 
