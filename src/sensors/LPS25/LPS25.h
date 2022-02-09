@@ -9,7 +9,7 @@
 #include <Wire.h>
 #include <Adafruit_Sensor.h>
 
-class EspLPS25 : public EspComponent<uint8_t>
+class EspLPS25 : public EspComponent<char*>
 {
 private:
   Adafruit_LPS25 *lps25;
@@ -21,7 +21,7 @@ private:
 public:
   void setValue() override;
   void update() override;
-  void setup() override;
+  void setup(char* id) override;
 };
 
 #endif

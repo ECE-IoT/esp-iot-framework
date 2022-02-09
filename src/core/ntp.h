@@ -16,7 +16,8 @@ public:
     return &esp_ntp_instance;
   }
   void setup(char* time_zone) override;
-  char* getValue();
+  char* getValueChar();
+  uint64_t getValue();
 };
 
 #endif

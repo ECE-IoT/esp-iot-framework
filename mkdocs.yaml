@@ -1,20 +1,27 @@
 site_name: ESP IoT Framework
 nav:
-  - Home: index.md
-  - Software Planning: 
-    - Class - ConnectionHandler: software-planning/connection-handler.md
-    - Sensors: software-planning/sensors.md
-  - Framework Documentation:
-    - ESP Core:
-      - Overview: core/overview.md
-      - Getting Started: core/getting_started.md
-      - Core Classes:
-        - Config: core/core_classes/esp_config.md
-        - Spiffs: core/core_classes/esp_spiffs.md
-        - Wifi: core/core_classes/esp_wifi.md
-        - Connection Handler: core/core_classes/esp_connection_handler.md
-        - Keys: core/core_classes/esp_keys.md
-        - Logger: core/core_classes/esp_logger.md
+
+  - Home: 
+      Welcome: index.md
+      Setup:
+        Getting Started: setup/setup.md
+        Structure: setup/structure.md
+        Coding Style: 
+          C++: setup/coding-style/cpp.md
+          Git: setup/coding-style/git.md
+        Documentation: setup/documentation.md
+  - Core: 
+      Introduction: core/index.md
+      Getting Started: core/getting_started.md
+      Core Classes:
+        Config: core/core_classes/esp_config.md
+        Spiffs: core/core_classes/esp_spiffs.md
+        Wifi: core/core_classes/esp_wifi.md
+        Connection Handler: core/core_classes/esp_connection_handler.md
+        Keys: core/core_classes/esp_keys.md
+        Logger: core/core_classes/esp_logger.md
+  - Sensors:
+      Introduction: sensors/index.md
 
 
 repo_url: https://github.com/ECE-IoT/esp-iot-framework
@@ -22,21 +29,23 @@ repo_url: https://github.com/ECE-IoT/esp-iot-framework
 theme:
   name: material
   language: en
+  logo: assets/logo.png
+  favicon: assets/logo.png
   features:
     - navigation.tabs
     - navigation.top
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: indigo
-      accent: light-blue
+      primary: green
+      accent: deep purple
       toggle:
         icon: material/toggle-switch-off-outline
         name: Switch to dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: indigo
-      accent: deep orange
+      primary: deep purple
+      accent: green
       toggle:
         icon: material/toggle-switch
         name: Switch to light mode
@@ -64,5 +73,7 @@ markdown_extensions:
           format: !!python/name:mermaid2.fence_mermaid
   - pymdownx.smartsymbols
   - pymdownx.critic
+  - pymdownx.tabbed:
+      alternate_style: true
   - pymdownx.tasklist:
       custom_checkbox: true

@@ -1,13 +1,23 @@
+/**
+ * CORE INPUTS
+ */
 #include "core/config.h"
 #include "core/connection_handler.h"
 #include "core/json.h"
+#include "core/logger.h"
 #include "core/mqtt.h"
 #include "core/scheduler.h"
 #include "core/spiffs.h"
+/**
+ * SENSOR INPUTS
+ */
 #include "sensors/DHT22/DHT22.h"
 #include "sensors/LPS25/LPS25.h"
-#include "sensors/VEML7700/VEML7700.h"
 #include "sensors/SCD30/SCD30.h"
+#include "sensors/VEML7700/VEML7700.h"
+/**
+ * LIBS
+ */
 #include <Arduino.h>
 #include <WiFiClientSecure.h>
 
@@ -16,54 +26,55 @@ using EspScheduler::iotScheduler;
 EspConnectionHandler esp_con_handler;
 connection_states state;
 EspJson esp_json;
+EspLogger* esp_logger;
+
+DHT22Config dht_config;
 
 /*Sensors*/
-EspDHT22 esp_dht;
-EspLPS25 esp_lps25;
-EspVEML7700 esp_veml;
-//EspSCD30 esp_scd30;
+EspDHT22 esp_dht22;
+EspLPS25 esp_lps;
 
 EspMqtt* esp_mqtt;
 EspConfig* esp_config;
 
-void testPrint();
+void updateSensor();
 
 void setup()
 {
   Serial.begin(9600);
-  Serial.println("Start");
 
-  esp_mqtt = EspMqtt::getInstance();
-  esp_config = EspConfig::getInstance();
+  dht_config.pin = 25;
+  dht_config.id  = "dht22_lab124";
+
+  esp_mqtt       = EspMqtt::getInstance();
+  esp_config     = EspConfig::getInstance();
+  esp_logger     = EspLogger::getInstance();
   esp_config->readConfig();
   esp_con_handler.setup();
-  esp_dht.setup(25);
-  esp_lps25.setup();
-  esp_veml.setup();
-  //esp_scd30.setup();
-  Serial.println("Start loop");
+
+  esp_dht22.setup(&dht_config);
+  esp_lps.setup("lps25_lab124");
 }
 
 void loop()
 {
   state = esp_con_handler.runHandler();
-  // Serial.println(state);
   if (state == 2)
   {
-    // Serial.println("connected");
-    iotScheduler(2000, testPrint);
+    iotScheduler(60000, updateSensor);
   }
 }
 
-void testPrint()
+void updateSensor()
 {
-  esp_dht.setValue();
-  esp_lps25.setValue();
-  esp_veml.setValue();
-  //esp_scd30.setValue();
-  esp_dht.update();
-  esp_lps25.update();
-  esp_veml.update();
-  //esp_scd30.update();
-  Serial.println("in callback");
+  /**
+   * READ THE SENSOR VALUE
+   */
+  esp_dht22.setValue();
+  esp_lps.setValue();
+  /**
+   * PUBLISH SENSOR VALUE TO AWS
+   */
+  esp_dht22.update();
+  esp_lps.update();
 }
