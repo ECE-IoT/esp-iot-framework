@@ -43,7 +43,7 @@ For the logging one of the following log levels can be selected:
 
 ### Logging
 
-For the output one of the following options can be slected: 
+For the output one of the following options can be selected: 
 
 1. LOG_OUTPUT_SERIAL_DIRECT 0
 
@@ -51,17 +51,17 @@ For the output one of the following options can be slected:
 
 2. LOG_OUTPUT_SERIAL_BEGIN 1   
 
-    Logging events are stored in the SPIFFS and printed over the serial interface at the start of the programm.
+    Logging events are stored in the SPIFFS and printed over the serial interface at the start of the program.
 
 3. LOG_OUTPUT_SERIAL_DIRECT_BEGIN 2  
 
-    Comibination of LOG_OUTPUT_SERIAL_DIRECT and LOG_OUTPUT_SERIAL_BEGIN.
+    Combination of LOG_OUTPUT_SERIAL_DIRECT and LOG_OUTPUT_SERIAL_BEGIN.
 
 4. LOG_OUTPUT_OFF 3     
 
     Not output at all.
 
-### Log file storrage
+### Log file storage
 
 The logged information is stored in three files on the SPIFFS. Each has a length of 100 lines. This is determined by the LOG_FILE_MAX_ROWS definition. This limits the logging to a total of 300 messages with the purpose of preventing Flash from becoming completely full if the program runs for a very long time. When all three files are full, the logger starts again with the first file and overwrites it.
 
@@ -71,9 +71,9 @@ These class implements the functionality described above.
 
 The class is implemented as singelton. Therefore the normal way to get an object of the class is to call getInstance() and then a pointer to the object will be returned.
 
-By calling logBegin(log_level, log_output_level) the logger is initialized and the logged messages from the last programm call is depending on the log_output_level printed to the serial monitor. The parameters log_level and log_output_level are stored in the configuration file and can be accessed using the [Esp_Config](esp_config.md) class.
+By calling logBegin(log_level, log_output_level) the logger is initialized and the logged messages from the last program call is depending on the log_output_level printed to the serial monitor. The parameters log_level and log_output_level are stored in the configuration file and can be accessed using the [Esp_Config](esp_config.md) class.
 
-In your code you can call on of the following functions to logg a message with a specific logg level.
+In your code you can call on of the following functions to log a message with a specific log level.
 
 - logFatal(message);
 - logError(message);

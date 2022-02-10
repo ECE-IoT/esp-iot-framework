@@ -2,7 +2,7 @@
 
 ## Purpose
 
-The aim of the implemented configuration is to write settings like wifi name and password to a separate configuration file instead of hard coding them in the source code. This gives the user the advantage of being able to change settings without having to change or reflash the source code. 
+The aim of the implemented configuration is to write settings like wifi name and password to a separate configuration file instead of hard coding them in the source code. This gives the user the advantage of being able to change settings without having to change or re-flash the source code. 
 
 Actually the following settings are implemented into the config.
 
@@ -21,7 +21,7 @@ Actually the following settings are implemented into the config.
 
 ### Create Config file
 
-To create the configuration file the python script genreate_config.py is used. This script must be called from a command line, and the settings are then entered from the command line as well. Then a file called config_file.json is created atomatically and stored in a directory with the name data.
+To create the configuration file the python script generate_config.py is used. This script must be called from a command line, and the settings are then entered from the command line as well. Then a file called config_file.json is created automatically and stored in a directory with the name data.
 
 The created configuration file is of the type [json](https://www.w3schools.com/js/js_json_intro.asp). This format is commonly used in IoT applications for data exchange. In a json file the data is stored as text in a ordered way. This makes it easy to create, edit and read these files.
 
@@ -29,7 +29,7 @@ The created configuration file is of the type [json](https://www.w3schools.com/j
 
 On the ESP device the configuration file is stored in the [SPIFFS](esp_spiffs.md) file system together with the certificates for the ssl connection.
 
-To uplode the configuration we suggest to use PlatformIO but you are also free to use a other option like the [Ardunio-IDE](https://randomnerdtutorials.com/install-esp32-filesystem-uploader-arduino-ide/).
+To upload the configuration we suggest to use PlatformIO but you are also free to use a other option like the [Ardunio-IDE](https://randomnerdtutorials.com/install-esp32-filesystem-uploader-arduino-ide/).
 
 The upload process is described [here](esp_spiffs.md).
 

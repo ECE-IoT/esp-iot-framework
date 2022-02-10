@@ -12,8 +12,7 @@ To uplode the SPIFFS we suggest to use PlatformIO but you are also free to use a
 
 1. Connect your ESP to your computer using a USB cable.
 
-2. In VS Code, open the PlatformIO extension on the left side and then open the esp device folder under *PROJECT TASKS*. You should then see a view similar to the following image. 
-![folder image](./../../assets/upload_spiffs.png)
+2. In VS Code, open the PlatformIO extension on the left side and then open the esp device folder under *PROJECT TASKS*.
 
 3. Click on *Build Filesystem Image* and wait unitl the task finishes. This is indicated when SUCCESS is printed at the terminal. What happens is that the content in the top directory data is used to build a spiffs image.
 

@@ -12,7 +12,6 @@ nav:
         Documentation: setup/documentation.md
   - Core: 
       Introduction: core/index.md
-      Getting Started: core/getting_started.md
       Core Classes:
         Config: core/core_classes/esp_config.md
         Spiffs: core/core_classes/esp_spiffs.md
