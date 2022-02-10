@@ -22,7 +22,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#core">
+<a class="md-skip" href="#esp-iot-core-introduction">
           Skip to content
         </a>
 </div>
@@ -238,9 +238,85 @@
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Introduction
+          <span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
         Introduction
       </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#purpose">
+    Purpose
+  </a>
+<nav aria-label="Purpose" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#core-classes">
+    Core Classes
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#scripts">
+    Scripts
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" id="__nav_2_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2">
+          Core Classes
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Core Classes" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_2">
+<span class="md-nav__icon md-icon"></span>
+          Core Classes
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="core_classes/esp_config/">
+        Config
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="core_classes/esp_spiffs/">
+        Spiffs
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="core_classes/esp_wifi/">
+        Wifi
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="core_classes/esp_connection_handler/">
+        Connection Handler
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="core_classes/esp_keys/">
+        Keys
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="core_classes/esp_logger/">
+        Logger
+      </a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -274,6 +350,31 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#purpose">
+    Purpose
+  </a>
+<nav aria-label="Purpose" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#core-classes">
+    Core Classes
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#scripts">
+    Scripts
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
 </nav>
 </div>
 </div>
@@ -283,13 +384,31 @@
 <a class="md-content__button md-icon" href="https://github.com/ECE-IoT/esp-iot-framework/edit/master/docs/core/index.md" title="Edit this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
-<h1 id="core">Core</h1>
+<h1 id="esp-iot-core-introduction">ESP IoT Core introduction</h1>
+<h2 id="purpose">Purpose</h2>
+<p>The intention of the core functionallity is to simplify the development of ESP32 IoT Devices, which interact with AWS Services. </p>
+<h3 id="core-classes">Core Classes</h3>
+<ul>
+<li><a href="core_classes/esp_config/">EspConfig</a></li>
+<li><a href="core_classes/esp_logger/">EspLogger</a></li>
+<li><a href="core_classes/esp_spiffs/">EspSpiffs</a></li>
+<li><a href="core_classes/esp_wifi/">EspWifi</a></li>
+<li>EspMqtt</li>
+<li><a href="core_classes/esp_connection_handler/">EspConnectionHandler</a></li>
+<li>EspScheduler</li>
+<li>EspSensor</li>
+<li>EspNTP</li>
+<li>EspJson</li>
+<li>EspComponent</li>
+<li><a href="core_classes/esp_keys/">Keys</a></li>
+</ul>
+<h3 id="scripts">Scripts</h3>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      2022-02-08
+      2022-02-10
     
   </small>
 </div>
@@ -316,13 +435,13 @@
             </div>
 </div>
 </a>
-<a aria-label="Next: Introduction" class="md-footer__link md-footer__link--next" href="../sensors/" rel="next">
+<a aria-label="Next: Config" class="md-footer__link md-footer__link--next" href="core_classes/esp_config/" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
                 Next
               </span>
-              Introduction
+              Config
             </div>
 </div>
 <div class="md-footer__button md-icon">
