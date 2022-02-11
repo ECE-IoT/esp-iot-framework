@@ -42,4 +42,8 @@ The class is implemented as singelton. Therefore the normal way to get an object
 
 To read the config file you have to call only once the ``readConfig()`` function of the ``EspConfig`` object.
 
+!!! Attention
+
+    It is important to call ``readConfig()`` at the beginning in Arduinos ``Setup()`` because other functionallitys like [``EspConenctionHandler``](esp_connection_handler.md) use the class in there implementations. 
+
 This class uses the class [``Esp_Spiffs``](esp_spiffs.md) to read the SPIFFS and the library [``ArduinoJson.h``](https://github.com/bblanchon/ArduinoJson) to parse the json file.
