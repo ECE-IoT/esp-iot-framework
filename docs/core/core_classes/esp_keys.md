@@ -21,4 +21,4 @@ To store them in the file system you just have to put the files together with th
 
 The purpose of this class is to read the three files from the file system and make them accessible by ``getFkt()`` functions. The files are read first by calling the ``begin()`` function of the class.
 
-The class uses the [EspSpiffs](esp_spiffs.md) class to read from the file system.
+The class uses the [``EspSpiffs``](esp_spiffs.md) class to read from the file system.

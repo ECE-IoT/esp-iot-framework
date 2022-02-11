@@ -6,7 +6,7 @@ The aim of this class is to bundle the functionality for structured access to th
 
 The class is used in the ``connection handler``.
 
-The class uses the [WiFi.h](https://github.com/espressif/arduino-esp32/tree/master/libraries/WiFi) library from the Arduino ESP Core.
+The class uses the [``WiFi.h``](https://github.com/espressif/arduino-esp32/tree/master/libraries/WiFi) library from the Arduino ESP Core.
 
 ## How to use?
 
