@@ -21,7 +21,7 @@ Actually the following settings are implemented into the config.
 
 ### Create Config file
 
-To create the configuration file the python script genreate_config.py is used. This script must be called from a command line, and the settings are then entered from the command line as well. Then a file called config_file.json is created atomatically and stored in a directory with the name data.
+To create the configuration file the python script ``genreate_config.py`` is used. This script must be called from a command line, and the settings are then entered from the command line as well. Then a file called ``config_file.json`` is created atomatically and stored in a directory with the name data.
 
 The created configuration file is of the type [json](https://www.w3schools.com/js/js_json_intro.asp). This format is commonly used in IoT applications for data exchange. In a json file the data is stored as text in a ordered way. This makes it easy to create, edit and read these files.
 
@@ -36,10 +36,10 @@ The upload process is described [here](esp_spiffs.md).
 
 ### EspConfig Class
 
-The Esp_Config class is used on the ESP to read the configuration file from SPIFFS and to make the its contents available through get....() functions.
+The Esp_Config class is used on the ESP to read the configuration file from SPIFFS and to make the its contents available through ``getFkt()`` functions.
 
-The class is implemented as singelton. Therefore the normal way to get an object of the class is to call getInstance() and then a pointer to the object will be returned.
+The class is implemented as singelton. Therefore the normal way to get an object of the class is to call ``getInstance()`` and then a pointer to the object will be returned.
 
-To read the config file you have to call only once the readConfig() function of the EspConfig object.
+To read the config file you have to call only once the ``readConfig()`` function of the ``EspConfig`` object.
 
-This class uses the class [Esp_Spiffs](esp_spiffs.md) to read the SPIFFS and the library [ArduinoJson.h](https://github.com/bblanchon/ArduinoJson) to parse the json file.
+This class uses the class [``Esp_Spiffs``](esp_spiffs.md) to read the SPIFFS and the library [``ArduinoJson.h``](https://github.com/bblanchon/ArduinoJson) to parse the json file.
