@@ -10,5 +10,5 @@ The class uses the [``WiFi.h``](https://github.com/espressif/arduino-esp32/tree/
 
 ## How to use?
 
-For a intial wifi connection the function ``beginWifi(ssid, password)`` has to be called. The function passes the parameters ``ssid`` and ``password``. These parameters are stored in the configuration file and can be accessed using the ``Esp_Config`` class.The current WLAN status can be checked with ``statusWifi()`` and the connection can be re-established with ``reconnectWifi()``.
+For a initial wifi connection the function ``beginWifi(ssid, password)`` has to be called. The function passes the parameters ``ssid`` and ``password``. These parameters are stored in the configuration file and can be accessed using the ``Esp_Config`` class.The current WLAN status can be checked with ``statusWifi()`` and the connection can be re-established with ``reconnectWifi()``.
 
