@@ -2,9 +2,7 @@
 
 ## Purpose
 
-The intention of the core functionallity is to simplify the development of ESP32 IoT Devices, which interact with AWS Services. 
-
-TODO mehr schreiben und umschreiben!
+The intention of the core functionality is to simplify the development of ESP32 IoT Devices, which interact with AWS Services. 
 
 ## Components
 
@@ -23,11 +21,5 @@ TODO mehr schreiben und umschreiben!
 - EspComponent
 - [Keys](core_classes/esp_keys.md)
 
-### Sensor Classes
 
-- dht22
-- vemlirgendwos
-- co2
-
-### Scripts
 

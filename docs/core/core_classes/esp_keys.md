@@ -2,9 +2,9 @@
 
 ## Why do we need a key and certificate files?
 
-To establish a TLS connection with device authentification the following three files are neccessary:
+To establish a TLS connection with device authentication the following three files are necessary:
 
-1. Privat Key (esp32-d1mini-01.private.key)
+1. Private Key (esp32-d1mini-01.private.key)
 2. Device Certificate (esp32-d1mini-01.cert.crt)
 3. Root Certificate (root-CA.pem)
 
