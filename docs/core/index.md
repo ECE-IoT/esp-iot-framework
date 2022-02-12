@@ -22,4 +22,3 @@ The intention of the core functionality is to simplify the development of ESP32 
 - [Keys](core_classes/esp_keys.md)
 
 
-

@@ -2,7 +2,7 @@
 
 ## Purpose
 
-The aim of the implemented configuration is to write settings like wifi name and password to a separate configuration file instead of hard coding them in the source code. This gives the user the advantage of being able to change settings without having to change or reflash the source code. 
+The aim of the implemented configuration is to write settings like wifi name and password to a separate configuration file instead of hard coding them in the source code. This gives the user the advantage of being able to change settings without having to change or re-flash the source code. 
 
 Actually the following settings are implemented into the config.
 
@@ -29,7 +29,7 @@ The created configuration file is of the type [json](https://www.w3schools.com/j
 
 On the ESP device the configuration file is stored in the [SPIFFS](esp_spiffs.md) file system together with the certificates for the ssl connection.
 
-To uplode the configuration we suggest to use PlatformIO but you are also free to use a other option like the [Ardunio-IDE](https://randomnerdtutorials.com/install-esp32-filesystem-uploader-arduino-ide/).
+To upload the configuration we suggest to use PlatformIO but you are also free to use a other option like the [Ardunio-IDE](https://randomnerdtutorials.com/install-esp32-filesystem-uploader-arduino-ide/).
 
 The upload process is described [here](esp_spiffs.md).
 
