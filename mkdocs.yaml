@@ -22,10 +22,11 @@ nav:
   - Sensors:
       Introduction: sensors/introduction.md
       Implementation: sensors/implementation.md
-      DHT22: sensors/DHT22.md
-      LPS25: sensors/LPS25.md
-      SCD30: sensors/SCD30.md
-      VEML7700: sensors/VEML7700.md
+      Modules: 
+        DHT22: sensors/DHT22.md
+        LPS25: sensors/LPS25.md
+        SCD30: sensors/SCD30.md
+        VEML7700: sensors/VEML7700.md
 
 
 repo_url: https://github.com/ECE-IoT/esp-iot-framework

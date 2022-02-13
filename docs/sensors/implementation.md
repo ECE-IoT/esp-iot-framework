@@ -2,7 +2,7 @@
 
 The functionality of the sensors within the framework is defined by the following 3 independently acting functions.
 
-## Setup
+## setup
 
 In the setup function, which is called once when the application is started, the framework initializes the respective sensor.
 ```cpp
@@ -26,9 +26,10 @@ With the update function, which is also called cyclically with the help of the s
 ```
 When implementing a new sensor, as long as the sensor object was created correctly, no changes need to be made in the update function. Only the physical sensors must be selected.
 
-## implementing a new Sensor
+## Implementing a new Sensor
 If a sensor should be added that is not yet integrated in the framework, this is done by first defining the new sensor.
 It is recommended to use the example code of the manufacturer for the respective platform.
+
 The type of sensor is defined based on the physical quantities that the sensor measures.
 When creating the subclass of the sensor, these quantities must be defined by their own sensor objects within the subclass.
 If libraries provided by the manufacturer are required, these must be included.
