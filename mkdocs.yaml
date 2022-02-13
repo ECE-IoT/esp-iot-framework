@@ -1,15 +1,7 @@
 site_name: ESP IoT Framework
 nav:
 
-  - Home: 
-      Welcome: index.md
-      Setup:
-        Getting Started: setup/setup.md
-        Structure: setup/structure.md
-        Coding Style: 
-          C++: setup/coding-style/cpp.md
-          Git: setup/coding-style/git.md
-        Documentation: setup/documentation.md
+  - Home: https://ECE-IoT.github.io/ECE-IoT.github.io/
   - Core: 
       Introduction: core/index.md
       Core Classes:
@@ -27,6 +19,8 @@ nav:
         LPS25: sensors/LPS25.md
         SCD30: sensors/SCD30.md
         VEML7700: sensors/VEML7700.md
+  - AWS: https://ece-iot.github.io/aws-iot-framework/aws/cli/configuration-basics/
+  - Alexa: https://ece-iot.github.io/aws-iot-framework/alexa
 
 
 repo_url: https://github.com/ECE-IoT/esp-iot-framework
@@ -42,15 +36,15 @@ theme:
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: green
-      accent: deep purple
+      primary: deep orange
+      accent: teal
       toggle:
         icon: material/toggle-switch-off-outline
         name: Switch to dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: deep purple
-      accent: green
+      primary: teal
+      accent: deep orange
       toggle:
         icon: material/toggle-switch
         name: Switch to light mode
