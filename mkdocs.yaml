@@ -20,7 +20,13 @@ nav:
         Keys: core/core_classes/esp_keys.md
         Logger: core/core_classes/esp_logger.md
   - Sensors:
-      Introduction: sensors/index.md
+      Introduction: sensors/introduction.md
+      Implementation: sensors/implementation.md
+      Modules: 
+        DHT22: sensors/DHT22.md
+        LPS25: sensors/LPS25.md
+        SCD30: sensors/SCD30.md
+        VEML7700: sensors/VEML7700.md
 
 
 repo_url: https://github.com/ECE-IoT/esp-iot-framework
