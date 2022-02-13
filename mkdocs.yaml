@@ -26,6 +26,7 @@ nav:
         VEML7700: sensors/VEML7700.md
   - AWS: https://ece-iot.github.io/aws-iot-framework/aws/cli/configuration-basics/
   - Alexa: https://ece-iot.github.io/aws-iot-framework/alexa
+  - Hardware: https://ece-iot.github.io/hardware/
 
 
 repo_url: https://github.com/ECE-IoT/esp-iot-framework
