@@ -1,16 +1,21 @@
 site_name: ESP IoT Framework
 nav:
-
   - Home: https://ECE-IoT.github.io/ECE-IoT.github.io/
   - Core: 
       Introduction: core/index.md
       Core Classes:
-        Config: core/core_classes/esp_config.md
-        Spiffs: core/core_classes/esp_spiffs.md
-        Wifi: core/core_classes/esp_wifi.md
+        Component: core/core_classes/esp_component.md
         Connection Handler: core/core_classes/esp_connection_handler.md
+        Config: core/core_classes/esp_config.md
+        JSON: core/core_classes/esp_json.md
         Keys: core/core_classes/esp_keys.md
         Logger: core/core_classes/esp_logger.md
+        MQTT: core/core_classes/esp_mqtt.md
+        NTP: core/core_classes/esp_ntp.md
+        Sensor: core/core_classes/esp_sensor.md
+        Scheduler: core/core_classes/esp_scheduler.md
+        Spiffs: core/core_classes/esp_spiffs.md
+        Wifi: core/core_classes/esp_wifi.md
   - Sensors:
       Introduction: sensors/introduction.md
       Implementation: sensors/implementation.md
