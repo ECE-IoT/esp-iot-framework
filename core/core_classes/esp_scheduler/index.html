@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="../../../assets/logo.png" rel="icon"/>
 <meta content="mkdocs-1.2.3, mkdocs-material-8.1.4" name="generator"/>
-<title>Config - ESP IoT Framework</title>
+<title>Scheduler - ESP IoT Framework</title>
 <link href="../../../assets/stylesheets/main.bb3983ee.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.e6a45f82.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -22,7 +22,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#configuration">
+<a class="md-skip" href="#scheduler">
           Skip to content
         </a>
 </div>
@@ -46,7 +46,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Config
+              Scheduler
             
           </span>
 </div>
@@ -203,52 +203,10 @@
         Connection Handler
       </a>
 </li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-          Config
-          <span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../esp_config/">
         Config
       </a>
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#purpose">
-    Purpose
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#implementation">
-    Implementation
-  </a>
-<nav aria-label="Implementation" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#create-config-file">
-    Create Config file
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#upload-config">
-    Upload Config
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#espconfig-class">
-    EspConfig Class
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../esp_json/">
@@ -280,8 +238,9 @@
         Sensor
       </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../esp_scheduler/">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<a class="md-nav__link md-nav__link--active" href="./">
         Scheduler
       </a>
 </li>
@@ -380,83 +339,16 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#purpose">
-    Purpose
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#implementation">
-    Implementation
-  </a>
-<nav aria-label="Implementation" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#create-config-file">
-    Create Config file
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#upload-config">
-    Upload Config
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#espconfig-class">
-    EspConfig Class
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-</ul>
 </nav>
 </div>
 </div>
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/ECE-IoT/esp-iot-framework/edit/master/docs/core/core_classes/esp_config.md" title="Edit this page">
+<a class="md-content__button md-icon" href="https://github.com/ECE-IoT/esp-iot-framework/edit/master/docs/core/core_classes/esp_scheduler.md" title="Edit this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
-<h1 id="configuration">Configuration</h1>
-<h2 id="purpose">Purpose</h2>
-<p>The aim of the implemented configuration is to write settings like wifi name and password to a separate configuration file instead of hard coding them in the source code. This gives the user the advantage of being able to change settings without having to change or re-flash the source code. </p>
-<p>Actually the following settings are implemented into the config.</p>
-<ul>
-<li>wifi ssid</li>
-<li>wifi password</li>
-<li>aws url</li>
-<li>aws port</li>
-<li>mqtt subsribe topic</li>
-<li>mqtt publish topic</li>
-<li>device id</li>
-<li>device position</li>
-<li>logger level</li>
-<li>logger output level</li>
-</ul>
-<h2 id="implementation">Implementation</h2>
-<h3 id="create-config-file">Create Config file</h3>
-<p>To create the configuration file the python script <code>genreate_config.py</code> is used. This script must be called from a command line, and the settings are then entered from the command line as well. Then a file called <code>config_file.json</code> is created atomatically and stored in a directory with the name data.</p>
-<p>The created configuration file is of the type <a href="https://www.w3schools.com/js/js_json_intro.asp">json</a>. This format is commonly used in IoT applications for data exchange. In a json file the data is stored as text in a ordered way. This makes it easy to create, edit and read these files.</p>
-<h3 id="upload-config">Upload Config</h3>
-<p>On the ESP device the configuration file is stored in the <a href="../esp_spiffs/">SPIFFS</a> file system together with the certificates for the ssl connection.</p>
-<p>To upload the configuration we suggest to use PlatformIO but you are also free to use a other option like the <a href="https://randomnerdtutorials.com/install-esp32-filesystem-uploader-arduino-ide/">Ardunio-IDE</a>.</p>
-<p>The upload process is described <a href="../esp_spiffs/">here</a>.</p>
-<h3 id="espconfig-class">EspConfig Class</h3>
-<p>The Esp_Config class is used on the ESP to read the configuration file from SPIFFS and to make the its contents available through <code>getFkt()</code> functions.</p>
-<p>The class is implemented as singelton. Therefore the normal way to get an object of the class is to call <code>getInstance()</code> and then a pointer to the object will be returned.</p>
-<p>To read the config file you have to call only once the <code>readConfig()</code> function of the <code>EspConfig</code> object.</p>
-<div class="admonition attention">
-<p class="admonition-title">Attention</p>
-<p>It is important to call <code>readConfig()</code> at the beginning in Arduinos <code>Setup()</code> because other functionallitys like <a href="../esp_connection_handler/"><code>EspConenctionHandler</code></a> use the class in there implementations. </p>
-</div>
-<p>This class uses the class <a href="../esp_spiffs/"><code>Esp_Spiffs</code></a> to read the SPIFFS and the library <a href="https://github.com/bblanchon/ArduinoJson"><code>ArduinoJson.h</code></a> to parse the json file.</p>
+<h1 id="scheduler">Scheduler</h1>
 <hr/>
 <div class="md-source-file">
 <small>
@@ -476,7 +368,7 @@
 </main>
 <footer class="md-footer">
 <nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Previous: Connection Handler" class="md-footer__link md-footer__link--prev" href="../esp_connection_handler/" rel="prev">
+<a aria-label="Previous: Sensor" class="md-footer__link md-footer__link--prev" href="../esp_sensor/" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
 </div>
@@ -485,17 +377,17 @@
 <span class="md-footer__direction">
                 Previous
               </span>
-              Connection Handler
+              Sensor
             </div>
 </div>
 </a>
-<a aria-label="Next: JSON" class="md-footer__link md-footer__link--next" href="../esp_json/" rel="next">
+<a aria-label="Next: Spiffs" class="md-footer__link md-footer__link--next" href="../esp_spiffs/" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
                 Next
               </span>
-              JSON
+              Spiffs
             </div>
 </div>
 <div class="md-footer__button md-icon">
