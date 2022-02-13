@@ -6,9 +6,9 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="../../../assets/logo.png" rel="icon"/>
-<meta content="mkdocs-1.2.3, mkdocs-material-8.1.10" name="generator"/>
+<meta content="mkdocs-1.2.3, mkdocs-material-8.1.4" name="generator"/>
 <title>Connection Handler - ESP IoT Framework</title>
-<link href="../../../assets/stylesheets/main.d6be258b.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/main.bb3983ee.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.e6a45f82.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&amp;display=fallback" rel="stylesheet"/>
@@ -16,8 +16,8 @@
 <link href="../../../assets/_mkdocstrings.css" rel="stylesheet"/>
 <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 </head>
-<body data-md-color-accent="deep-purple" data-md-color-primary="green" data-md-color-scheme="default" dir="ltr">
-<script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+<body data-md-color-accent="teal" data-md-color-primary="deep-orange" data-md-color-scheme="default" dir="ltr">
+<script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)</script>
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
@@ -53,11 +53,11 @@
 </div>
 </div>
 <form class="md-header__option" data-md-component="palette">
-<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="deep-purple" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="green" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="teal" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="deep-orange" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
 <label class="md-header__button md-icon" for="__palette_2" hidden="" title="Switch to dark mode">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"></path></svg>
 </label>
-<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="green" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="deep-purple" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="deep-orange" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="teal" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
 <label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to light mode">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3z"></path></svg>
 </label>
@@ -109,9 +109,9 @@
 <div class="md-tabs__inner md-grid">
 <ul class="md-tabs__list">
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../..">
-        Home
-      </a>
+<a class="md-tabs__link" href="https://ECE-IoT.github.io/ECE-IoT.github.io/">
+      Home
+    </a>
 </li>
 <li class="md-tabs__item">
 <a class="md-tabs__link md-tabs__link--active" href="../../">
@@ -119,9 +119,19 @@
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../../sensors/">
+<a class="md-tabs__link" href="../../../sensors/introduction/">
         Sensors
       </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="https://ece-iot.github.io/aws-iot-framework/aws/cli/configuration-basics/">
+      AWS
+    </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="https://ece-iot.github.io/aws-iot-framework/alexa">
+      Alexa
+    </a>
 </li>
 </ul>
 </div>
@@ -149,80 +159,10 @@
 </a>
 </div>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" id="__nav_1" type="checkbox"/>
-<label class="md-nav__link" for="__nav_1">
-          Home
-          <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-label="Home" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_1">
-<span class="md-nav__icon md-icon"></span>
-          Home
-        </label>
-<ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../..">
-        Welcome
+<a class="md-nav__link" href="https://ECE-IoT.github.io/ECE-IoT.github.io/">
+        Home
       </a>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_2" id="__nav_1_2" type="checkbox"/>
-<label class="md-nav__link" for="__nav_1_2">
-          Setup
-          <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-label="Setup" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_1_2">
-<span class="md-nav__icon md-icon"></span>
-          Setup
-        </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../setup/setup/">
-        Getting Started
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../setup/structure/">
-        Structure
-      </a>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_2_3" id="__nav_1_2_3" type="checkbox"/>
-<label class="md-nav__link" for="__nav_1_2_3">
-          Coding Style
-          <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-label="Coding Style" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_1_2_3">
-<span class="md-nav__icon md-icon"></span>
-          Coding Style
-        </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../setup/coding-style/cpp/">
-        C++
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../setup/coding-style/git/">
-        Git
-      </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../setup/documentation/">
-        Documentation
-      </a>
-</li>
-</ul>
-</nav>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item md-nav__item--active md-nav__item--nested">
 <input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
@@ -292,6 +232,25 @@
 <a class="md-nav__link" href="#implementation">
     Implementation
   </a>
+<nav aria-label="Implementation" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#setup">
+    Setup
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#loop">
+    Loop
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#espconenctionhandler-class">
+    EspConenctionHandler Class
+  </a>
 </li>
 </ul>
 </nav>
@@ -325,12 +284,62 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../sensors/">
+<a class="md-nav__link" href="../../../sensors/introduction/">
         Introduction
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../sensors/implementation/">
+        Implementation
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" id="__nav_3_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_3">
+          Modules
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Modules" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_3">
+<span class="md-nav__icon md-icon"></span>
+          Modules
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../sensors/DHT22/">
+        DHT22
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../sensors/LPS25/">
+        LPS25
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../sensors/SCD30/">
+        SCD30
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../sensors/VEML7700/">
+        VEML7700
       </a>
 </li>
 </ul>
 </nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="https://ece-iot.github.io/aws-iot-framework/aws/cli/configuration-basics/">
+        AWS
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="https://ece-iot.github.io/aws-iot-framework/alexa">
+        Alexa
+      </a>
 </li>
 </ul>
 </nav>
@@ -355,6 +364,25 @@
 <a class="md-nav__link" href="#implementation">
     Implementation
   </a>
+<nav aria-label="Implementation" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#setup">
+    Setup
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#loop">
+    Loop
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#espconenctionhandler-class">
+    EspConenctionHandler Class
+  </a>
 </li>
 </ul>
 </nav>
@@ -368,13 +396,47 @@
 </a>
 <h1>Connection Handler</h1>
 <h2 id="purpose">Purpose</h2>
+<p>The aim of the connection handler is to manage the Wifi connection and the TLS MQTT connection to the AWS broker.</p>
 <h2 id="implementation">Implementation</h2>
+<h3 id="setup">Setup</h3>
+<p>In the <code>Setup()</code> the initialization of <a href="esp_mqtt.md"><code>EspMQTT</code></a>, <a href="esp_ntp.md"><code>EspNTP</code></a> and <a href="../esp_wifi/"><code>EspWifi</code></a> is done.</p>
+<p>To do this, the necessary configuration information is read from the configuration file with the help of <code>EspConfig</code>. The information is used to establish a first Wifi connection, to pass the configuration to MQTT and also to set the time zone of the ntp.</p>
+<h3 id="loop">Loop</h3>
+<p>Now, this is where the actual main function of the connection handler comes into play.</p>
+<p>To automatically handle connecting and reconnecting to Wifi and the mqtt broker following statemachine is used.</p>
+<p><strong>States</strong>:</p>
+<ol>
+<li>
+<p><code>CONNECT_WIFI</code></p>
+<p>Initial state. Here the state machine connects the device to the wifi and changes to <code>CONNECT_MQTT</code> when the Wifi is connected.</p>
+</li>
+<li>
+<p><code>CONNECT_MQTT</code></p>
+<p>Checks if Wifi is connected and switches to <code>CONNECT_WIFI</code> if neccessary. Establishes MQTT connection and sends an init message to the aws broker. When the connection is established, the statemachine switches to <code>CONNECTED</code>.</p>
+</li>
+<li>
+<p><code>CONNECTED</code></p>
+<p>In this state the Wifi and MQTT connection is constantly checked and in case of a connection loss the Stemachine switches either to <code>CONNECT_MQTT</code> or to <code>CONNECT_WIFI</code>.</p>
+</li>
+</ol>
+<p>When the state machine is called in code, it returns the current state. If the returned state is <code>CONNECTED</code>, then this signals to the [scheduler] (insert TODO link to sceduler doku) that everything is ready and it can start sending data.</p>
+<p>The state machine is designed not to block the program during execution. This means, for example, that when the program reconnects to the Wifi, it calls the reconnect function and then exits the state machine instead of waiting in the state machine until the Wifi is connected.</p>
+<p>This ensures that the <code>Loop()</code> is executed continuously and allows the user to use a watchdog or put custom code after the sceduler in the <code>Loop()</code> which is then executed continuously.</p>
+<h2 id="espconenctionhandler-class">EspConenctionHandler Class</h2>
+<p>The class implements the functionallity descrribed before.</p>
+<p>The <code>stetp()</code> function of the class is called in Arduinos <code>Setup()</code> and it handles all the setup functionallity described above. </p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>We assume that you use the <a href="../esp_config/"><code>EspConfig</code></a> in other places in your program and therefore it is important that you call the <code>readConfig()</code> function in <code>Setup()</code> before calling <code>EspConenctionHandler.stetp()</code>.</p>
+</div>
+<p>The <code>runHadler()</code> function of the class implements the statemachine. This function is called in Arduinos <code>Loop()</code> and it returns the actuall state. The state is of the type <code>enum connection_states</code>.</p>
+<p>The class uses the <a href="esp_mqtt.md"><code>EspMQTT</code></a>, <a href="esp_ntp.md"><code>EspNTP</code></a>, <a href="../esp_config/"><code>EspConfig</code></a>, <a href="esp_json.md"><code>EspJson</code></a> and <a href="../esp_wifi/"><code>EspWifi</code></a> classes of the core.</p>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      2022-02-09
+      2022-02-11
     
   </small>
 </div>
@@ -432,7 +494,7 @@
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.092fa1f6.min.js"}</script>
-<script src="../../../assets/javascripts/bundle.e3b2bf44.min.js"></script>
+<script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.361d90f1.min.js"}</script>
+<script src="../../../assets/javascripts/bundle.289a2a4b.min.js"></script>
 </body>
 </html>

@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="../../assets/logo.png" rel="icon"/>
 <meta content="mkdocs-1.2.3, mkdocs-material-8.1.4" name="generator"/>
-<title>Class - ConnectionHandler - ESP IoT Framework</title>
+<title>Implementation - ESP IoT Framework</title>
 <link href="../../assets/stylesheets/main.bb3983ee.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.e6a45f82.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -22,7 +22,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#class-connectionhandler">
+<a class="md-skip" href="#implementation">
           Skip to content
         </a>
 </div>
@@ -46,7 +46,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Class - ConnectionHandler
+              Implementation
             
           </span>
 </div>
@@ -119,7 +119,7 @@
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../sensors/introduction/">
+<a class="md-tabs__link md-tabs__link--active" href="../introduction/">
         Sensors
       </a>
 </li>
@@ -229,8 +229,8 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
 <label class="md-nav__link" for="__nav_3">
           Sensors
           <span class="md-nav__icon md-icon"></span>
@@ -242,14 +242,47 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../sensors/introduction/">
+<a class="md-nav__link" href="../introduction/">
         Introduction
       </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../sensors/implementation/">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Implementation
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
         Implementation
       </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#setup">
+    setup
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#setvalue">
+    setValue
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#update">
+    update
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#implementing-a-new-sensor">
+    Implementing a new Sensor
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" id="__nav_3_3" type="checkbox"/>
@@ -264,22 +297,22 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../sensors/DHT22/">
+<a class="md-nav__link" href="../DHT22/">
         DHT22
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../sensors/LPS25/">
+<a class="md-nav__link" href="../LPS25/">
         LPS25
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../sensors/SCD30/">
+<a class="md-nav__link" href="../SCD30/">
         SCD30
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../sensors/VEML7700/">
+<a class="md-nav__link" href="../VEML7700/">
         VEML7700
       </a>
 </li>
@@ -314,8 +347,23 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#features">
-    Features
+<a class="md-nav__link" href="#setup">
+    setup
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#setvalue">
+    setValue
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#update">
+    update
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#implementing-a-new-sensor">
+    Implementing a new Sensor
   </a>
 </li>
 </ul>
@@ -325,32 +373,40 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/ECE-IoT/esp-iot-framework/edit/master/docs/software-planning/connection-handler.md" title="Edit this page">
+<a class="md-content__button md-icon" href="https://github.com/ECE-IoT/esp-iot-framework/edit/master/docs/sensors/implementation.md" title="Edit this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
-<h1 id="class-connectionhandler">Class - ConnectionHandler</h1>
-<p>The purpose of this class is to ensure that every remote connection is alive and maintained (Wifi, MQTT to broker).</p>
-<h2 id="features">Features</h2>
-<p>The main structure contains a state machine which handles the connection to the Wifi, sets up a TLS client for MQTT, enables a connection to the AWS MQTT Broker.</p>
-<h1 id="structure">Structure</h1>
-<p>Basic UML in order to understand the structure of the class </p>
-<div class="mermaid">  classDiagram
-    class ConnectionHandler{
-      +ESPWifi esp_wifi
-      +ESPLogger esp_logger
-      +EspConfig *esp_config
-      +MQTTClient *mqtt_client
-      +enum states
-      -ConnectionHandler()
-      -state connectionStateMachine()
-    }
-</div>
+<h1 id="implementation">Implementation</h1>
+<p>The functionality of the sensors within the framework is defined by the following 3 independently acting functions.</p>
+<h2 id="setup">setup</h2>
+<p>In the setup function, which is called once when the application is started, the framework initializes the respective sensor.
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="n">EspSensor</span><span class="p">.</span><span class="n">setup</span><span class="p">(){};</span><span class="w"></span>
+</code></pre></div>
+When implementing a new sensor, any initialization of the sensor in the sample code must be integrated into this function. </p>
+<h2 id="setvalue">setValue</h2>
+<p>The set_value function is called cyclically with the help of the scheduler and determines the current measured value and stores it in the specified variable.
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="n">EspSensor</span><span class="p">.</span><span class="n">setValue</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"></span>
+</code></pre></div>
+When implementing a new sensor, the measured value for each measurement determined by the sample code or function must be stored directly in the variable provided for the physical sensor. </p>
+<h2 id="update">update</h2>
+<p>With the update function, which is also called cyclically with the help of the scheduler, the variables containing the data of the sensor including the measurement data are uploaded to the MQTT broker.
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="n">EspSensor</span><span class="p">.</span><span class="n">update</span><span class="p">()</span><span class="w"></span>
+</code></pre></div>
+When implementing a new sensor, as long as the sensor object was created correctly, no changes need to be made in the update function. Only the physical sensors must be selected.</p>
+<h2 id="implementing-a-new-sensor">Implementing a new Sensor</h2>
+<p>If a sensor should be added that is not yet integrated in the framework, this is done by first defining the new sensor.
+It is recommended to use the example code of the manufacturer for the respective platform.</p>
+<p>The type of sensor is defined based on the physical quantities that the sensor measures.
+When creating the subclass of the sensor, these quantities must be defined by their own sensor objects within the subclass.
+If libraries provided by the manufacturer are required, these must be included.</p>
+<p>The functions which provide the use of the sensor should always be globally related to the respective sensor to be integrated. 
+For example, with the DHT22, which measures air temperature and humidity, the measurement of both sensor objects is started with a call to setValue.</p>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      2022-01-10
+      2022-02-13
     
   </small>
 </div>
@@ -363,6 +419,34 @@
           </a>
 </main>
 <footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a aria-label="Previous: Introduction" class="md-footer__link md-footer__link--prev" href="../introduction/" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Previous
+              </span>
+              Introduction
+            </div>
+</div>
+</a>
+<a aria-label="Next: DHT22" class="md-footer__link md-footer__link--next" href="../DHT22/" rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Next
+              </span>
+              DHT22
+            </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"></path></svg>
+</div>
+</a>
+</nav>
 <div class="md-footer-meta md-typeset">
 <div class="md-footer-meta__inner md-grid">
 <div class="md-copyright">
@@ -382,7 +466,5 @@
 </div>
 <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.361d90f1.min.js"}</script>
 <script src="../../assets/javascripts/bundle.289a2a4b.min.js"></script>
-<script src="https://unpkg.com/mermaid@8.8.0/dist/mermaid.min.js"></script><script>mermaid.initialize({
-    theme: (JSON.parse(window.localStorage.getItem('/.__palette')).index == 1) ? 'dark' : 'light'
-});</script></body>
+</body>
 </html>

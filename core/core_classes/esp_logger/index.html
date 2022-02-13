@@ -6,9 +6,9 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="../../../assets/logo.png" rel="icon"/>
-<meta content="mkdocs-1.2.3, mkdocs-material-8.1.10" name="generator"/>
+<meta content="mkdocs-1.2.3, mkdocs-material-8.1.4" name="generator"/>
 <title>Logger - ESP IoT Framework</title>
-<link href="../../../assets/stylesheets/main.d6be258b.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/main.bb3983ee.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.e6a45f82.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&amp;display=fallback" rel="stylesheet"/>
@@ -16,8 +16,8 @@
 <link href="../../../assets/_mkdocstrings.css" rel="stylesheet"/>
 <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 </head>
-<body data-md-color-accent="deep-purple" data-md-color-primary="green" data-md-color-scheme="default" dir="ltr">
-<script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+<body data-md-color-accent="teal" data-md-color-primary="deep-orange" data-md-color-scheme="default" dir="ltr">
+<script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)</script>
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
@@ -53,11 +53,11 @@
 </div>
 </div>
 <form class="md-header__option" data-md-component="palette">
-<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="deep-purple" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="green" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="teal" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="deep-orange" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
 <label class="md-header__button md-icon" for="__palette_2" hidden="" title="Switch to dark mode">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"></path></svg>
 </label>
-<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="green" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="deep-purple" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="deep-orange" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="teal" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
 <label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to light mode">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3z"></path></svg>
 </label>
@@ -109,9 +109,9 @@
 <div class="md-tabs__inner md-grid">
 <ul class="md-tabs__list">
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../..">
-        Home
-      </a>
+<a class="md-tabs__link" href="https://ECE-IoT.github.io/ECE-IoT.github.io/">
+      Home
+    </a>
 </li>
 <li class="md-tabs__item">
 <a class="md-tabs__link md-tabs__link--active" href="../../">
@@ -119,9 +119,19 @@
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../../sensors/">
+<a class="md-tabs__link" href="../../../sensors/introduction/">
         Sensors
       </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="https://ece-iot.github.io/aws-iot-framework/aws/cli/configuration-basics/">
+      AWS
+    </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="https://ece-iot.github.io/aws-iot-framework/alexa">
+      Alexa
+    </a>
 </li>
 </ul>
 </div>
@@ -149,80 +159,10 @@
 </a>
 </div>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" id="__nav_1" type="checkbox"/>
-<label class="md-nav__link" for="__nav_1">
-          Home
-          <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-label="Home" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_1">
-<span class="md-nav__icon md-icon"></span>
-          Home
-        </label>
-<ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../..">
-        Welcome
+<a class="md-nav__link" href="https://ECE-IoT.github.io/ECE-IoT.github.io/">
+        Home
       </a>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_2" id="__nav_1_2" type="checkbox"/>
-<label class="md-nav__link" for="__nav_1_2">
-          Setup
-          <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-label="Setup" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_1_2">
-<span class="md-nav__icon md-icon"></span>
-          Setup
-        </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../setup/setup/">
-        Getting Started
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../setup/structure/">
-        Structure
-      </a>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_2_3" id="__nav_1_2_3" type="checkbox"/>
-<label class="md-nav__link" for="__nav_1_2_3">
-          Coding Style
-          <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-label="Coding Style" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_1_2_3">
-<span class="md-nav__icon md-icon"></span>
-          Coding Style
-        </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../setup/coding-style/cpp/">
-        C++
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../setup/coding-style/git/">
-        Git
-      </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../setup/documentation/">
-        Documentation
-      </a>
-</li>
-</ul>
-</nav>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item md-nav__item--active md-nav__item--nested">
 <input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
@@ -349,12 +289,62 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../sensors/">
+<a class="md-nav__link" href="../../../sensors/introduction/">
         Introduction
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../sensors/implementation/">
+        Implementation
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" id="__nav_3_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_3">
+          Modules
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Modules" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_3">
+<span class="md-nav__icon md-icon"></span>
+          Modules
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../sensors/DHT22/">
+        DHT22
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../sensors/LPS25/">
+        LPS25
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../sensors/SCD30/">
+        SCD30
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../sensors/VEML7700/">
+        VEML7700
       </a>
 </li>
 </ul>
 </nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="https://ece-iot.github.io/aws-iot-framework/aws/cli/configuration-basics/">
+        AWS
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="https://ece-iot.github.io/aws-iot-framework/alexa">
+        Alexa
+      </a>
 </li>
 </ul>
 </nav>
@@ -419,32 +409,32 @@
 <p>The purpose of the logger is to log messages with different log levels such as info, debug in a file on the SPIFFS and print the information either at the beginning of the program via the serial monitor or directly during the program, depending on the configuration</p>
 <p>The aim of these is to inform the user about the device status and to simplify and speed up debugging.</p>
 <h2 id="implementation">Implementation</h2>
-<p>The configuration described below is passed to the program via the <a href="../esp_config/">config file</a>.</p>
+<p>The configuration described below is passed to the program via the <a href="../esp_config/"><code>config file</code></a>.</p>
 <h3 id="log-levels">Log levels</h3>
 <p>For the logging one of the following log levels can be selected: </p>
 <ol>
 <li>
-<p>LOG_LEVEL_OFF </p>
+<p><code>LOG_LEVEL_OFF</code> </p>
 <p>No logging.</p>
 </li>
 <li>
-<p>LOG_LEVEL_FATAL</p>
+<p><code>LOG_LEVEL_FATAL</code></p>
 <p>Designates very severe error events that will presumably lead the application to abort.</p>
 </li>
 <li>
-<p>LOG_LEVEL_ERROR</p>
+<p><code>LOG_LEVEL_ERROR</code></p>
 <p>Designates error events that might still allow the application to continue running.</p>
 </li>
 <li>
-<p>LOG_LEVEL_WARNING </p>
+<p><code>LOG_LEVEL_WARNING</code> </p>
 <p>Designates potentially harmful situations.</p>
 </li>
 <li>
-<p>LOG_LEVEL_INFO</p>
+<p><code>LOG_LEVEL_INFO</code></p>
 <p>Designates informational messages that highlight the progress of the application at coarse-grained level.</p>
 </li>
 <li>
-<p>LOG_LEVEL_DEBUG</p>
+<p><code>LOG_LEVEL_DEBUG</code></p>
 <p>Designates fine-grained informational events that are most useful to debug an application.</p>
 </li>
 </ol>
@@ -456,47 +446,47 @@
 <p>For the output one of the following options can be selected: </p>
 <ol>
 <li>
-<p>LOG_OUTPUT_SERIAL_DIRECT 0</p>
+<p><code>LOG_OUTPUT_SERIAL_DIRECT</code></p>
 <p>Logging events are directly printed over serial interface when they occure.</p>
 </li>
 <li>
-<p>LOG_OUTPUT_SERIAL_BEGIN 1   </p>
+<p><code>LOG_OUTPUT_SERIAL_BEGIN</code> </p>
 <p>Logging events are stored in the SPIFFS and printed over the serial interface at the start of the program.</p>
 </li>
 <li>
-<p>LOG_OUTPUT_SERIAL_DIRECT_BEGIN 2  </p>
-<p>Combination of LOG_OUTPUT_SERIAL_DIRECT and LOG_OUTPUT_SERIAL_BEGIN.</p>
+<p><code>LOG_OUTPUT_SERIAL_DIRECT_BEGIN</code></p>
+<p>Comibination of <code>LOG_OUTPUT_SERIAL_DIRECT</code> and <code>LOG_OUTPUT_SERIAL_BEGIN</code>.</p>
 </li>
 <li>
-<p>LOG_OUTPUT_OFF 3     </p>
+<p><code>LOG_OUTPUT_OFF</code> </p>
 <p>Not output at all.</p>
 </li>
 </ol>
 <h3 id="log-file-storage">Log file storage</h3>
-<p>The logged information is stored in three files on the SPIFFS. Each has a length of 100 lines. This is determined by the LOG_FILE_MAX_ROWS definition. This limits the logging to a total of 300 messages with the purpose of preventing Flash from becoming completely full if the program runs for a very long time. When all three files are full, the logger starts again with the first file and overwrites it.</p>
+<p>The logged information is stored in three files on the SPIFFS. Each has a length of 100 lines. This is determined by the <code>LOG_FILE_MAX_ROWS</code> definition. This limits the logging to a total of 300 messages with the purpose of preventing Flash from becoming completely full if the program runs for a very long time. When all three files are full, the logger starts again with the first file and overwrites it.</p>
 <h2 id="esplogger">EspLogger</h2>
 <p>These class implements the functionality described above.</p>
-<p>The class is implemented as singelton. Therefore the normal way to get an object of the class is to call getInstance() and then a pointer to the object will be returned.</p>
-<p>By calling logBegin(log_level, log_output_level) the logger is initialized and the logged messages from the last program call is depending on the log_output_level printed to the serial monitor. The parameters log_level and log_output_level are stored in the configuration file and can be accessed using the <a href="../esp_config/">Esp_Config</a> class.</p>
+<p>The class is implemented as singelton. Therefore the normal way to get an object of the class is to call <code>getInstance()</code> and then a pointer to the object will be returned.</p>
+<p>By calling <code>logBegin(log_level, log_output_level)</code> the logger is initialized and the logged messages from the last programm call is depending on the log_output_level printed to the serial monitor. The parameters <code>log_level</code> and <code>log_output_level</code> are stored in the configuration file and can be accessed using the <a href="../esp_config/"><code>Esp_Config</code></a> class.</p>
 <p>In your code you can call on of the following functions to log a message with a specific log level.</p>
 <ul>
-<li>logFatal(message);</li>
-<li>logError(message);</li>
-<li>logWarning(message);</li>
-<li>logInfo(message);</li>
-<li>logDebug(message);</li>
+<li><code>logFatal(message)</code>;</li>
+<li><code>logError(message)</code>;</li>
+<li><code>logWarning(message)</code>;</li>
+<li><code>logInfo(message)</code>;</li>
+<li><code>logDebug(message)</code>;</li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The logger automatically adds an appropriate label and timestamp to your message. This means that you only have to worry about the content of the message and the logger takes care of the rest.</p>
 </div>
-<p>The class uses the <a href="../esp_spiffs/">EspSpiffs</a> to access SPIFFS and the <a href="esp_ntp.md">Ntp</a> class to get the current time.</p>
+<p>The class uses the <a href="../esp_spiffs/"><code>EspSpiffs</code></a> to access SPIFFS and the <a href="esp_ntp.md"><code>Ntp</code></a> class to get the current time.</p>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      2022-02-10
+      2022-02-13
     
   </small>
 </div>
@@ -523,7 +513,7 @@
             </div>
 </div>
 </a>
-<a aria-label="Next: Introduction" class="md-footer__link md-footer__link--next" href="../../../sensors/" rel="next">
+<a aria-label="Next: Introduction" class="md-footer__link md-footer__link--next" href="../../../sensors/introduction/" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
@@ -554,7 +544,7 @@
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.092fa1f6.min.js"}</script>
-<script src="../../../assets/javascripts/bundle.e3b2bf44.min.js"></script>
+<script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.361d90f1.min.js"}</script>
+<script src="../../../assets/javascripts/bundle.289a2a4b.min.js"></script>
 </body>
 </html>
