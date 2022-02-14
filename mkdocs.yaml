@@ -1,6 +1,6 @@
 site_name: ESP IoT Framework
 nav:
-  - Home: https://ECE-IoT.github.io/ECE-IoT.github.io/
+  - Home: https://ece-iot.github.io
   - Core: 
       Introduction: core/index.md
       Core Classes:
@@ -26,7 +26,7 @@ nav:
         VEML7700: sensors/VEML7700.md
   - AWS: https://ece-iot.github.io/aws-iot-framework/aws/cli/configuration-basics/
   - Alexa: https://ece-iot.github.io/aws-iot-framework/alexa
-  - Hardware: https://ece-iot.github.io/hardware/
+  - Hardware: https://ece-iot.github.io/hardware/hardware/description/
 
 
 repo_url: https://github.com/ECE-IoT/esp-iot-framework
