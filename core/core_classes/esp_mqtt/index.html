@@ -230,9 +230,60 @@
 </li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          MQTT
+          <span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
         MQTT
       </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#purpose">
+    Purpose
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#functionality">
+    Functionality
+  </a>
+<nav aria-label="Functionality" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#get-an-object">
+    Get an object
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#configure-the-mqtt-client">
+    Configure the MQTT client
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#connect-client-to-broker">
+    Connect client to broker
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#register-client-side-callback-function">
+    Register client-side callback function
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#publish-subscribe">
+    Publish / Subscribe
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../esp_ntp/">
@@ -349,6 +400,51 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#purpose">
+    Purpose
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#functionality">
+    Functionality
+  </a>
+<nav aria-label="Functionality" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#get-an-object">
+    Get an object
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#configure-the-mqtt-client">
+    Configure the MQTT client
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#connect-client-to-broker">
+    Connect client to broker
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#register-client-side-callback-function">
+    Register client-side callback function
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#publish-subscribe">
+    Publish / Subscribe
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
 </nav>
 </div>
 </div>
@@ -359,12 +455,57 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
 <h1 id="mqtt">MQTT</h1>
+<h2 id="purpose">Purpose</h2>
+<p>The <code>EspMqtt</code> class handles the <code>MQTT</code> functionality by using an extra <code>MQTT Framework</code> called <a href="https://github.com/256dpi/arduino-mqtt">arduino-mqtt</a>. The class <code>EspMqtt</code> acts as an interface in order to facilitate the usage of <code>MQTT</code>. Therefore the class is implemented as a singleton structure, which guarantees that there's just one MQTT instance. With just one connection to the <code>MQTT Broker</code> throughout the whole program. </p>
+<h2 id="functionality">Functionality</h2>
+<h3 id="get-an-object">Get an object</h3>
+<p>Due to the singleton structure there is just one instance of the class  throughout the whole program. In order to fetch this instance, do the following: </p>
+<ul>
+<li>Create a new variable with the type <code>EspMqtt</code></li>
+<li>Call the following method: </li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="k">static</span><span class="w"> </span><span class="n">EspMqtt</span><span class="o">*</span><span class="w"> </span><span class="nf">getInstance</span><span class="p">()</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="o">&amp;</span><span class="n">esp_mqtt_instance</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h3 id="configure-the-mqtt-client">Configure the MQTT client</h3>
+<p>The configuration / setup works on the basis of the use of a structure called <code>EspMqttConfig</code>. This <code>struct</code> consists of the following properties: </p>
+<p><div class="highlight"><pre><span></span><code><span class="k">struct</span> <span class="nc">EspMqttConfig</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">server_address</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">device_id</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">subscribe_topic</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">publish_topic</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">port</span><span class="p">;</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+</code></pre></div>
+Thanks to the internal functionality of the <strong>ESP IoT Framework</strong> an <code>EspMqttConfig</code> <code>struct</code> is created by the <code>EspConnectionHandler</code> class. There every part of the configuration for <code>MQTT</code> is read out of the <code>config_file.json</code>. </p>
+<p>Calling the <code>setup()</code> function for the <code>EspConnectionHandler</code>, calls the <code>setup</code> function for <code>MQTT</code> and configures the <code>MQTT client</code> correctly</p>
+<h3 id="connect-client-to-broker">Connect client to broker</h3>
+<p>In order to connect the client to the desired <code>MQTT broker</code> use the method:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">bool</span><span class="w"> </span><span class="nf">connect</span><span class="p">();</span><span class="w"></span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is also done within the <code>EspConnectionHandler</code></p>
+</div>
+<h3 id="register-client-side-callback-function">Register client-side callback function</h3>
+<p>To get events from a certain topic sent from the <code>MQTT broker</code> the following function works as a interface. This interface enables the user to register a <code>callback</code> function which gets called when new data on a given topic arrives.</p>
+<p><div class="highlight"><pre><span></span><code><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span> <span class="nc">T</span><span class="o">&gt;</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">registerClient</span><span class="p">(</span><span class="n">T</span><span class="w"> </span><span class="n">subscribe_callback</span><span class="p">(</span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">topic</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">payload</span><span class="p">));</span><span class="w"></span>
+</code></pre></div>
+The <code>template</code> is used, so the return parameter may vary depending on the desired functionality.</p>
+<h3 id="publish-subscribe">Publish / Subscribe</h3>
+<p><strong>Publish</strong>
+This method is used by the internal <code>sensors</code> which publish their value automatically to the <code>MQTT broker</code> with an interval set by the <code>EspScheduler</code></p>
+<p><strong>Subscribe</strong>
+This method can be used to <strong>re-configure</strong> the subscribe topic. It does <strong>NOT</strong> return any data, sent from the <code>MQTT broker</code> </p>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      2022-02-13
+      2022-02-14
     
   </small>
 </div>

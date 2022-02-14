@@ -235,9 +235,26 @@
 </li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          NTP
+          <span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
         NTP
       </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#purpose">
+    Purpose
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../esp_sensor/">
@@ -349,6 +366,17 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#purpose">
+    Purpose
+  </a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
@@ -359,12 +387,19 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
 <h1 id="ntp">NTP</h1>
+<h2 id="purpose">Purpose</h2>
+<p>Fetches <em>time</em> information from the local time-zone via an NTP server. </p>
+<ul>
+<li><code>char* EspNTP::getValueChar()</code> returns value as a string</li>
+<li><code>uint64_t EspNTP::getValue()</code> returns value as UNIX integer value</li>
+</ul>
+<p>The NTP class is based upon the work of <a href="https://github.com/gmag11/ESPNtpClient.git">NTP</a>. </p>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      2022-02-13
+      2022-02-14
     
   </small>
 </div>

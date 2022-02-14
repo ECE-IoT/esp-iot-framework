@@ -240,9 +240,59 @@
 </li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Sensor
+          <span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
         Sensor
       </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#purpose">
+    Purpose
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#espsensor-super-class">
+    EspSensor super-class
+  </a>
+<nav aria-label="EspSensor super-class" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#functionality">
+    Functionality
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#physical-sensors">
+    Physical Sensors
+  </a>
+<nav aria-label="Physical Sensors" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#functionality_1">
+    Functionality
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#adding-a-physical-sensor">
+    Adding a physical sensor
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../esp_scheduler/">
@@ -349,6 +399,50 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#purpose">
+    Purpose
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#espsensor-super-class">
+    EspSensor super-class
+  </a>
+<nav aria-label="EspSensor super-class" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#functionality">
+    Functionality
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#physical-sensors">
+    Physical Sensors
+  </a>
+<nav aria-label="Physical Sensors" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#functionality_1">
+    Functionality
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#adding-a-physical-sensor">
+    Adding a physical sensor
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
 </nav>
 </div>
 </div>
@@ -359,12 +453,49 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
 <h1 id="sensor">Sensor</h1>
+<h2 id="purpose">Purpose</h2>
+<p>The functionality of the <a href="../../../sensors/introduction/">Sensors</a> rely on two main components which are implemented in the <code>core</code> functions: </p>
+<ul>
+<li><code>EspSensor</code> super-class</li>
+<li><code>Physical Sensors</code> which implement the <code>EspSensor</code> and form the basis for the sensor modules by defining the physically measurable quantity</li>
+</ul>
+<h2 id="espsensor-super-class"><code>EspSensor</code> super-class</h2>
+<h3 id="functionality">Functionality</h3>
+<p>The <code>EspSensor</code> class exposes two methods which are later implemented by the <code>physical sensor</code> classes. </p>
+<hr/>
+<p><div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="n">setValue</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"></span>
+</code></pre></div>
+This method takes an <code>float</code> as the input and saves the value in a <code>private</code> member variable. In addition the <code>timestamp</code> at the moment the method is called gets captured in order to have an accurate period measurement.</p>
+<hr/>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="n">updateMQTT</span><span class="p">()</span><span class="w"></span>
+</code></pre></div>
+<p>This method is used for sending the captured values through <code>MQTT</code> to <a href="https://ece-iot.github.io/aws-iot-framework/aws/cli/configuration-basics/">AWS</a>.</p>
+<hr/>
+<p>Both functions are separated in order to prevent timing problems due to a delay when sending Data to AWS. So all sensor values are read first, then they sent over <code>MQTT</code>. </p>
+<h2 id="physical-sensors"><code>Physical Sensors</code></h2>
+<p>The following physical entities are already implemented:</p>
+<ul>
+<li><a href="https://github.com/ECE-IoT/esp-iot-framework/blob/master/src/core/physical_sensors/temperature.h">Temperature</a></li>
+<li><a href="https://github.com/ECE-IoT/esp-iot-framework/blob/master/src/core/physical_sensors/humidity.h">Humidity</a></li>
+<li><a href="https://github.com/ECE-IoT/esp-iot-framework/blob/master/src/core/physical_sensors/pressure.h">Barometric pressure</a></li>
+<li><a href="https://github.com/ECE-IoT/esp-iot-framework/blob/master/src/core/physical_sensors/pressure.h">Illuminance</a></li>
+<li><a href="https://github.com/ECE-IoT/esp-iot-framework/blob/master/src/core/physical_sensors/gas_concentration.h">Gas concentration</a></li>
+</ul>
+<h3 id="functionality_1">Functionality</h3>
+<p>All <code>physical sensor</code> implement the <code>EspSensor</code> as their super-class. The idea behind a structure like this is to adapt the sub-class in a manner that there is a class for every physical entity. Later, an object of the specific physical sensor class (e.g. 'Temperature') can be used to set the current measured value.</p>
+<p>This standardizes the measurement of a physical quantity and facilitates a later analysis of the acquired data of a type.</p>
+<h3 id="adding-a-physical-sensor">Adding a physical sensor</h3>
+<p>If there is the need for a new physical sensor, comply to the form of the other implementations. The following <code>Pre processors</code> need to be adapted:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#define UNIT        "new_physical_unit"</span>
+<span class="cp">#define SENSOR_TYPE "sensor_type"</span>
+<span class="cp">#define MQTT_TOPIC  "/sensor_type"</span>
+</code></pre></div>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      2022-02-13
+      2022-02-14
     
   </small>
 </div>
