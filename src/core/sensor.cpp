@@ -3,7 +3,7 @@
 EspSensor::EspSensor()
 {
   this->esp_mqtt_->getInstance();
-  this->esp_mqtt_->getInstance();
+  this->esp_ntp_->getInstance();
 }
 
 void EspSensor::setValue(float value)
